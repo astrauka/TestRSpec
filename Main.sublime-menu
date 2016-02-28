@@ -1,0 +1,17 @@
+[
+  {
+    "id": "tools",
+    "children": [
+      {
+        "id": "SublimeRSpec",
+        "caption": "SublimeRSpec",
+        "children": [
+          {
+            "caption": "Test Current Line",
+            "command": "test_current_line"
+          }
+        ]
+      }
+    ]
+  }
+]
