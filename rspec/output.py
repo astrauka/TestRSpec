@@ -1,4 +1,4 @@
-from decorators import memoize
+from plugin_helpers.decorators import memoize
 
 class Output(object):
   class Levels:
@@ -13,7 +13,7 @@ class Output(object):
     self.edit = edit
 
   def log(self, message):
-    self.panel().insert(self.edit, self.panel().size(), message)
+    self.panel().insert(self.edit, self.panel().size(), "{0}\n".format(message))
 
   @memoize
   def panel(self):

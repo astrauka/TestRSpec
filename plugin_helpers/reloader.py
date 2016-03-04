@@ -8,13 +8,14 @@ import imp
 print('Reloading rspec modules')
 
 modules = [
-  'decorators',
-  'output',
-  'project_root'
-  'execute_spec',
+  'plugin_helpers.decorators',
+  'rspec.output',
+  'rspec.project_root',
+  'rspec.task_context',
+  'rspec.execute_spec',
 ]
 sys_modules = sys.modules
-modules_to_reload = [sys_modules[module] for module in modules if sys_modules.get(module)]
+modules_to_reload = [sys_modules.get(module) for module in modules if sys_modules.get(module)]
 
 for module in modules_to_reload:
   if 'on_module_reload' in module.__dict__:

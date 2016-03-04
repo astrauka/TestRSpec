@@ -1,19 +1,21 @@
 import sublime, sublime_plugin, sys, os.path, imp
 
 BASE_PATH = os.path.abspath(os.path.dirname(__file__))
-sys.path += [BASE_PATH] + [os.path.join(BASE_PATH, f) for f in ['plugin_helpers', 'rspec']]
+sys.path += [BASE_PATH]
 
 # Make sure all dependencies are reloaded
 if 'plugin_helpers.reloader' in sys.modules:
   imp.reload(sys.modules['plugin_helpers.reloader'])
 import plugin_helpers.reloader
 
-from execute_spec import ExecuteSpec
+from rspec.execute_spec import ExecuteSpec
+from rspec.task_context import TaskContext
 
 class TestCurrentLineCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     print("Preparing to run rspec")
-    ExecuteSpec(self, edit)
+    context = TaskContext(self, edit)
+    ExecuteSpec(context)
 
 
 # /home/astrauka/.rbenv/bin/rbenv  exec  bundle  exec  spring  rspec  spec/models/user_spec.rb:2

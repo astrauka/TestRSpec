@@ -1,4 +1,4 @@
-from decorators import memoize
+from plugin_helpers.decorators import memoize
 
 class ProjectRoot(object):
   def __init__(self, file_name):
