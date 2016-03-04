@@ -13,6 +13,7 @@ class ExecuteSpec(object):
     self.context.log("Project root {0}".format(self.context.project_root()))
     self.context.log("Spec target {0}".format(self.context.spec_target()))
     self.context.display_output_panel()
+    self.execute_spec()
 
   def notify_missing_project_root(self):
     self.context.log(
@@ -27,3 +28,14 @@ class ExecuteSpec(object):
       level=Output.Levels.ERROR
     )
     self.context.display_output_panel()
+
+  def execute_spec(self):
+    command = ' '.join(["./bin/rspec", self.context.spec_target()])
+    env = ''
+    self.context.log("Executing {0}\n".format(command))
+    self.context.window().run_command("exec", {
+      "shell_cmd": command,
+      "working_dir": self.context.project_root(),
+      "env": env,
+      "file_regex": r"([^ ]*\.rb):?(\d*)",
+    })

@@ -38,9 +38,15 @@ class TaskContext(object):
   def project_root(self):
     return ProjectRoot(self.file_name()).result()
 
+  def window(self):
+    return self.view().window()
+
   @memoize
   def output_buffer(self):
     return Output(self.view().window(), self.edit)
+
+  def output_panel(self):
+    return self.output_buffer().panel()
 
   def log(self, message, level=Output.Levels.INFO):
     self.output_buffer().log("{0}: {1}".format(level, message))
