@@ -1,17 +1,19 @@
 from plugin_helpers.decorators import memoize
 from rspec.project_root import ProjectRoot
 from rspec.output import Output
+import sublime
 
 class TaskContext(object):
+  PACKAGE_NAME = "SublimeRSpec"
   SPEC_FILE_POSTFIX = "_spec.rb"
 
-  def __init__(self, sublime, edit):
-    self.sublime = sublime
+  def __init__(self, sublime_command, edit):
+    self.sublime_command = sublime_command
     self.edit = edit
 
   @memoize
   def view(self):
-    return self.sublime.view
+    return self.sublime_command.view
 
   @memoize
   def file_name(self):
@@ -43,7 +45,11 @@ class TaskContext(object):
 
   @memoize
   def output_buffer(self):
-    return Output(self.view().window(), self.edit)
+    return Output(
+      self.view().window(),
+      self.edit,
+      self.from_settings("panel_settings")
+    )
 
   def output_panel(self):
     return self.output_buffer().panel()
@@ -53,6 +59,13 @@ class TaskContext(object):
 
   def display_output_panel(self):
     self.output_buffer().show_panel()
+
+  @memoize
+  def settings(self):
+    return sublime.load_settings("{0}.sublime-settings".format(TaskContext.PACKAGE_NAME))
+
+  def from_settings(self, key, default_value = None):
+    return self.settings().get(key, default_value)
 
   def is_test_file(self):
     return self.file_name().endswith(TaskContext.SPEC_FILE_POSTFIX)

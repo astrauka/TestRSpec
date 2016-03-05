@@ -1,5 +1,4 @@
-import sys
-import imp
+import sys, imp
 
 # Dependecy reloader
 # The original idea is borrowed from
@@ -9,7 +8,6 @@ print('Reloading rspec modules')
 
 modules = [
   'plugin_helpers.decorators',
-  'plugin_helpers.non_blocking_stream_reader',
   'rspec.output',
   'rspec.project_root',
   'rspec.task_context',

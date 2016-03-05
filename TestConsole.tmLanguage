@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>bundleUUID</key>
+  <string>72174d10-bb12-11e0-962b-112233445566</string>
+  <key>name</key>
+  <string>TestConsole</string>
+  <key>patterns</key>
+  <array>
+    <dict>
+      <key>comment</key>
+      <string>test pass</string>
+      <key>match</key>
+      <string>(^|\s)\d+ (tests|assertions|examples?|passed)|(0 failures|0 errors|0 skips)|(^\.+$)</string>
+      <key>name</key>
+      <string>test.pass</string>
+    </dict>
+    <dict>
+      <key>comment</key>
+      <string>test error</string>
+      <key>match</key>
+      <string>(E{1})\b|([1-9]\d* errors)|(\d+\) Error:|Failing \w*:|cucumber(\s\S*)|[1-9]\d* failed)|test_(\w*\S):</string>
+      <key>name</key>
+      <string>test.error</string>
+    </dict>
+    <dict>
+      <key>comment</key>
+      <string>test fail</string>
+      <key>match</key>
+      <string>[F]{1}\b|(\d+ failures?)|(\d+\) Failure:)|(test_\w*)*\(</string>
+      <key>name</key>
+      <string>test.fail</string>
+    </dict>
+    <dict>
+      <key>skipped</key>
+      <string>test cucumber skipped</string>
+      <key>match</key>
+      <string>\d+ skip(s|ped)?</string>
+      <key>name</key>
+      <string>test.skipped</string>
+    </dict>
+    <dict>
+      <key>pending</key>
+      <string>test cucumber pending in summary</string>
+      <key>match</key>
+      <string>(\d+ pending|\d+ undefined)</string>
+      <key>name</key>
+      <string>test.pending</string>
+    </dict>
+
+    <!-- Matches the Scenario: description line comment and the comment portion of the failing scenarios block of text -->
+    <dict>
+      <key>comment</key>
+      <string>test cucumber comment</string>
+      <key>match</key>
+      <string>\s#\s{1}.+</string>
+      <key>name</key>
+      <string>test.comment</string>
+    </dict>
+
+
+    <!-- Cuke PASS -->
+    <dict>
+      <key>comment</key>
+      <string>test cucumber comment</string>
+      <key>match</key>
+      <string>(\s{4}Given.+|\s{4}When.+|\s{4}Then.+|\s{4}And.+|\s{4}But.+)(#\s\S+$)</string>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>test.pass</string>
+        </dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>test.comment</string>
+        </dict>
+      </dict>
+    </dict>
+    <!-- End Cuke PASS -->
+
+
+    <!-- Print code or other non passing/failing/pending stuff in step -->
+    <dict>
+      <key>comment</key>
+      <string>test cucumber comment</string>
+      <key>match</key>
+      <string>(^\s{6}.+)</string>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>test.skipped</string>
+        </dict>
+      </dict>
+    </dict>
+    <!-- End Print code in step -->
+
+
+    <!-- Cuke Pending -->
+    <dict>
+      <key>begin</key>
+      <string>.*(#\s\S+?\s)(#PEND)</string>
+      <key>beginCaptures</key>
+      <dict>
+        <key>0</key>
+        <dict>
+          <key>name</key>
+          <string>test.pending</string>
+        </dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>test.comment</string>
+        </dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>test.hidden_comment</string>
+        </dict>
+      </dict>
+      <key>end</key>
+      <string>(^\s+$)</string>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>match</key>
+          <string>^\s{6}.*</string>
+          <key>name</key>
+          <string>test.pending</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\s{4}Given.+|\s{4}When.+|\s{4}Then.+|\s{4}And.+|\s{4}But.+)(#.+)</string>
+          <key>captures</key>
+          <dict>
+            <key>1</key>
+            <dict>
+              <key>name</key>
+              <string>test.skipped</string>
+            </dict>
+            <key>2</key>
+            <dict>
+              <key>name</key>
+              <string>test.comment</string>
+            </dict>
+          </dict>
+        </dict>
+      </array>
+    </dict>
+    <!-- End Cuke Pending -->
+
+    <!-- Cuke Error -->
+    <dict>
+      <key>begin</key>
+      <string>.*(#\s\S+?\s)(#ERROR)</string>
+      <key>beginCaptures</key>
+      <dict>
+        <key>0</key>
+        <dict>
+          <key>name</key>
+          <string>test.error</string>
+        </dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>test.comment</string>
+        </dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>test.hidden_comment</string>
+        </dict>
+      </dict>
+      <key>end</key>
+      <string>(^\s{2}Scenario:)|(^Failing Scenarios:)</string>
+      <key>endCaptures</key>
+      <dict>
+        <!-- using the 2nd key allows us to only target the Failing Scenarios: text at the bottom -->
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>test.error</string>
+        </dict>
+      </dict>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>match</key>
+          <string>^\s{6}.*</string>
+          <key>name</key>
+          <string>test.error</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\s{4}Given.+|\s{4}When.+|\s{4}Then.+|\s{4}And.+|\s{4}But.+)(#.+)</string>
+          <key>captures</key>
+          <dict>
+            <key>1</key>
+            <dict>
+              <key>name</key>
+              <string>test.skipped</string>
+            </dict>
+            <key>2</key>
+            <dict>
+              <key>name</key>
+              <string>test.comment</string>
+            </dict>
+          </dict>
+        </dict>
+      </array>
+    </dict>
+    <!-- End Cuke Error -->
+
+    <!-- Cuke Undefined section (at bottom) -->
+    <dict>
+      <key>begin</key>
+      <string>^You can implement step definitions.+</string>
+      <key>beginCaptures</key>
+      <dict>
+        <key>0</key>
+        <dict>
+          <key>name</key>
+          <string>test.pending</string>
+        </dict>
+      </dict>
+      <key>end</key>
+      <string>(^\t)</string>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>match</key>
+          <string>.*</string>
+          <key>name</key>
+          <string>test.pending</string>
+        </dict>
+      </array>
+    </dict>
+    <!-- End Undefined -->
+
+    <dict>
+      <key>comment</key>
+      <string>dots painting</string>
+      <key>begin</key>
+      <string>Started</string>
+      <key>patterns</key>
+      <array>
+        <dict>
+          <key>match</key>
+          <string>\.+|passed</string>
+          <key>name</key>
+          <string>test.pass</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>E+</string>
+          <key>name</key>
+          <string>test.error</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>F+</string>
+          <key>name</key>
+          <string>test.fail</string>
+        </dict>
+      </array>
+      <key>end</key>
+      <string>Finished</string>
+    </dict>
+    <dict>
+      <key>comment</key>
+      <string>color syntax response</string>
+      <key>match</key>
+      <string>Syntax OK</string>
+      <key>name</key>
+      <string>test.pass</string>
+    </dict>
+  </array>
+  <key>scopeName</key>
+  <string>tests.ruby</string>
+  <key>uuid</key>
+  <string>72174d10-bb12-11e0-962b-112233445566</string>
+</dict>
+</plist>

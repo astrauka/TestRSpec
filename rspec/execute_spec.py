@@ -30,12 +30,18 @@ class ExecuteSpec(object):
     self.context.display_output_panel()
 
   def execute_spec(self):
-    command = ' '.join(["./bin/rspec", self.context.spec_target()])
-    env = ''
+    command = ' '.join([self.context.from_settings("bin_rspec_path"), self.context.spec_target()])
+    pannel_settings = self.context.from_settings("panel_settings", {})
+    env = self.context.from_settings("env", {})
+
     self.context.log("Executing {0}\n".format(command))
-    self.context.window().run_command("exec", {
-      "shell_cmd": command,
-      "working_dir": self.context.project_root(),
-      "env": env,
-      "file_regex": r"([^ ]*\.rb):?(\d*)",
-    })
+    self.context.window().run_command(
+      "exec", {
+        "shell_cmd": command,
+        "working_dir": self.context.project_root(),
+        "env": env,
+        "file_regex": r"([^ ]*\.rb):?(\d*)",
+        "syntax": pannel_settings.get("syntax"),
+        "encoding": pannel_settings.get("encoding", "utf-8")
+      }
+    )

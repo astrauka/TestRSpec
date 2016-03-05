@@ -1,4 +1,4 @@
-import sublime, sublime_plugin, sys, os.path, imp
+import sublime_plugin, sys, os.path, imp
 
 BASE_PATH = os.path.abspath(os.path.dirname(__file__))
 sys.path += [BASE_PATH]
