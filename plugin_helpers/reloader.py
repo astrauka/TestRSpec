@@ -12,9 +12,13 @@ modules = [
   'rspec.project_root',
   'rspec.task_context',
   'rspec.execute_spec',
+  'rspec.spec_command',
+  'rspec.spec_commands.bin_rspec',
+  'rspec.spec_commands.ruby_rspec',
 ]
 sys_modules = sys.modules
 modules_to_reload = [sys_modules.get(module) for module in modules if sys_modules.get(module)]
+# print([module.__name__ for module in modules_to_reload])
 
 for module in modules_to_reload:
   if 'on_module_reload' in module.__dict__:

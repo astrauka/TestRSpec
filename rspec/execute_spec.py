@@ -1,5 +1,6 @@
 from plugin_helpers.decorators import memoize
 from rspec.output import Output
+from rspec.spec_command import SpecCommand
 
 class ExecuteSpec(object):
   def __init__(self, context):
@@ -30,7 +31,7 @@ class ExecuteSpec(object):
     self.context.display_output_panel()
 
   def execute_spec(self):
-    command = ' '.join([self.context.from_settings("bin_rspec_path"), self.context.spec_target()])
+    command = ' '.join([SpecCommand(self.context).result(), self.context.spec_target()])
     pannel_settings = self.context.from_settings("panel_settings", {})
     env = self.context.from_settings("env", {})
 
