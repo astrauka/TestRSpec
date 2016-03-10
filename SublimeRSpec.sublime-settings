@@ -6,7 +6,18 @@
   },
   "env": {
   },
-  "bin_rspec_path": "./bin/rspec",
+  "paths": {
+    "bin_rspec": "./bin/rspec",
+    "rbenv_rspec": "~/.rbenv/shims/rspec",
+    "rvm_rspec": "~/.rvm/bin/rvm-auto-ruby",
+    "system_rspec": "/usr/local/bin/rbenv",
+  },
+  "check_for": {
+    "rbenv_rspec": true,
+    "rvm_rspec": true,
+    "bundler": true,
+    "spring": true,
+  },
 
 
   // taken from RubyTest plugin

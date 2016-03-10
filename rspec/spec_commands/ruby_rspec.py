@@ -21,9 +21,9 @@ class RubyRspec(object):
       )
     )
 
-    def _ruby(self):
-      return(
-        Rbenv(self.context).result() or
-        Rvm(self.context).result() or
-        SystemRuby(self.context).result()
-      )
+  def _ruby(self):
+    return(
+      Rbenv(self.context).result() or
+      Rvm(self.context).result() or
+      SystemRuby(self.context).result()
+    )

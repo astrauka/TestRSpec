@@ -17,7 +17,7 @@ class BinRspec(object):
 
   @memoize
   def _bin_path(self):
-    return self.context.from_settings("bin_rspec_path")
+    return self.context.from_settings("paths", {}).get("bin_rspec")
 
   @memoize
   def _bin_url(self):

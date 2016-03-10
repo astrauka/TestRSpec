@@ -1,7 +1,7 @@
 from plugin_helpers.decorators import memoize
 from rspec.project_root import ProjectRoot
 from rspec.output import Output
-import sublime
+import sublime, os
 
 class TaskContext(object):
   PACKAGE_NAME = "SublimeRSpec"
@@ -69,3 +69,7 @@ class TaskContext(object):
 
   def is_test_file(self):
     return self.file_name().endswith(TaskContext.SPEC_FILE_POSTFIX)
+
+  @memoize
+  def which_rspec(self):
+    return os.popen("which rspec").read().split('\n')[0]
