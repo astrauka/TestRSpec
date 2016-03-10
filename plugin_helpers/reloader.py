@@ -15,6 +15,11 @@ modules = [
   'rspec.spec_command',
   'rspec.spec_commands.bin_rspec',
   'rspec.spec_commands.ruby_rspec',
+  'rspec.spec_commands.bundle',
+  'rspec.spec_commands.rbenv',
+  'rspec.spec_commands.rvm',
+  'rspec.spec_commands.spring',
+  'rspec.spec_commands.system_ruby',
 ]
 sys_modules = sys.modules
 modules_to_reload = [sys_modules.get(module) for module in modules if sys_modules.get(module)]
