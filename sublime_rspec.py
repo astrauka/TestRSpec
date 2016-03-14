@@ -29,6 +29,12 @@ class RunLastSpecCommand(sublime_plugin.TextCommand):
     context = TaskContext(self, edit)
     ExecuteSpec(context).last_run()
 
+class DisplayOutputPanelCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    print("Preparing to display output panel")
+    context = TaskContext(self, edit)
+    context.display_output_panel()
+
 # /home/astrauka/.rbenv/bin/rbenv  exec  bundle  exec  spring  rspec  spec/models/user_spec.rb:2
 # file_path:line
 #

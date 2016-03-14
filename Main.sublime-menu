@@ -18,6 +18,10 @@
             "caption": "Run last spec",
             "command": "run_last_spec"
           },
+          {
+            "caption": "Display output panel",
+            "command": "display_output_panel"
+          },
         ]
       }
     ]

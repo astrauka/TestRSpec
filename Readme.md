@@ -13,9 +13,9 @@ When preconditions are not satisfied outputs to panel.
 # TODO
 
 * last run X
-* show test panel
-* save_all
+* show test panel X
 * go to spec/file
+* save_all
 * create spec file
 * shortcuts/hotkeys, commands X
 * readme
