@@ -9,7 +9,15 @@
           {
             "caption": "Test Current Line",
             "command": "test_current_line"
-          }
+          },
+          {
+            "caption": "Test Current File",
+            "command": "test_current_file"
+          },
+          {
+            "caption": "Run last spec",
+            "command": "run_last_spec"
+          },
         ]
       }
     ]

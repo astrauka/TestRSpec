@@ -15,8 +15,19 @@ class TestCurrentLineCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     print("Preparing to run rspec")
     context = TaskContext(self, edit)
-    ExecuteSpec(context)
+    ExecuteSpec(context).current_line()
 
+class TestCurrentFileCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    print("Preparing to run rspec")
+    context = TaskContext(self, edit)
+    ExecuteSpec(context).current_line() # TODO RUN FILE
+
+class RunLastSpecCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    print("Preparing to run last rspec command")
+    context = TaskContext(self, edit)
+    ExecuteSpec(context).last_run()
 
 # /home/astrauka/.rbenv/bin/rbenv  exec  bundle  exec  spring  rspec  spec/models/user_spec.rb:2
 # file_path:line

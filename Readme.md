@@ -13,6 +13,7 @@ When preconditions are not satisfied outputs to panel.
 # TODO
 
 * last run
+* save_all
 * go to spec/file
 * create spec file
 * shortcuts/hotkeys, commands
