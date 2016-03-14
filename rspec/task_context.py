@@ -5,6 +5,7 @@ import sublime, os
 
 class TaskContext(object):
   PACKAGE_NAME = "SublimeRSpec"
+  GEMFILE_NAME = "Gemfile"
   SPEC_FILE_POSTFIX = "_spec.rb"
 
   def __init__(self, sublime_command, edit):
@@ -73,3 +74,10 @@ class TaskContext(object):
   @memoize
   def which_rspec(self):
     return os.popen("which rspec").read().split('\n')[0]
+
+  @memoize
+  def gemfile_path(self):
+    path = os.path.join(self.project_root(), TaskContext.GEMFILE_NAME)
+    if not os.path.isfile(path): return None
+
+    return path

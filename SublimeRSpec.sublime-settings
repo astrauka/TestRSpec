@@ -8,13 +8,13 @@
   },
   "paths": {
     "bin_rspec": "./bin/rspec",
-    "rbenv_rspec": "~/.rbenv/shims/rspec",
-    "rvm_rspec": "~/.rvm/bin/rvm-auto-ruby",
+    "rbenv": "~/.rbenv/bin/rbenv",
+    "rvm": "~/.rvm/bin/rvm-auto-ruby",
     "system_rspec": "/usr/local/bin/rbenv",
   },
   "check_for": {
-    "rbenv_rspec": true,
-    "rvm_rspec": true,
+    "rbenv": true,
+    "rvm": true,
     "bundler": true,
     "spring": true,
   },

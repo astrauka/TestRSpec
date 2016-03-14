@@ -5,6 +5,8 @@ from rspec.spec_commands.rvm import Rvm
 from rspec.spec_commands.system_ruby import SystemRuby
 
 class RubyRspec(object):
+  RSPEC_COMMAND = "rspec"
+
   def __init__(self, context):
     self.context = context
 
@@ -17,6 +19,7 @@ class RubyRspec(object):
           self._ruby(),
           Bundle(self.context).result(),
           Spring(self.context).result(),
+          RubyRspec.RSPEC_COMMAND,
         ]
       )
     )
