@@ -10,11 +10,12 @@
     "bin_rspec": "./bin/rspec",
     "rbenv": "~/.rbenv/bin/rbenv",
     "rvm": "~/.rvm/bin/rvm-auto-ruby",
-    "system_rspec": "/usr/local/bin/rbenv",
+    "system_ruby": "/usr/bin/env ruby",
   },
   "check_for": {
     "rbenv": true,
     "rvm": true,
+    "system_ruby": true,
     "bundler": true,
     "spring": true,
   },
