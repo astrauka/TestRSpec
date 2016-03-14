@@ -1,4 +1,5 @@
 from plugin_helpers.decorators import memoize
+from plugin_helpers.project_files import ProjectFiles
 from rspec.project_root import ProjectRoot
 from rspec.output import Output
 import sublime, os
@@ -81,3 +82,11 @@ class TaskContext(object):
     if not os.path.isfile(path): return None
 
     return path
+
+  def project_files(self, file_matcher):
+    return ProjectFiles(
+      self.project_root(),
+      file_matcher,
+      self.from_settings("ignored_directories")
+    ).filter()
+

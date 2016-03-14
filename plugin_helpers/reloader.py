@@ -8,6 +8,7 @@ print('Reloading rspec modules')
 
 modules = [
   'plugin_helpers.decorators',
+  'plugin_helpers.project_files',
   'rspec.output',
   'rspec.project_root',
   'rspec.task_context',
@@ -21,6 +22,7 @@ modules = [
   'rspec.spec_command',
   'rspec.last_run',
   'rspec.execute_spec',
+  'rspec.switch_between_code_and_test',
 ]
 sys_modules = sys.modules
 modules_to_reload = [sys_modules.get(module) for module in modules if sys_modules.get(module)]

@@ -22,6 +22,10 @@
             "caption": "Display output panel",
             "command": "display_output_panel"
           },
+          {
+            "caption": "Switch between code and test",
+            "command": "switch_between_code_and_test"
+          },
         ]
       }
     ]

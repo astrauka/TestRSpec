@@ -3,7 +3,8 @@
     "keys": ["super+shift+r"],
     "command": "test_current_line",
     "context": [
-      { "key": "selector",
+      {
+        "key": "selector",
         "operator": "equal",
         "operand": "source.ruby, source.rspec"
       }
@@ -14,7 +15,8 @@
     "keys": ["super+shift+t"],
     "command": "test_current_file",
     "context": [
-      { "key": "selector",
+      {
+        "key": "selector",
         "operator": "equal",
         "operand": "source.ruby, source.rspec"
       }
@@ -24,23 +26,17 @@
   { "keys": ["super+shift+e"], "command": "run_last_spec" }, // run last spec
   { "keys": ["super+shift+x"], "command": "display_output_panel" }, // display output panel
 
+  {
+    "keys": ["super+period"],
+    "command": "switch_between_code_and_test",
+    "context": [
+      {
+        "key": "selector", "operator": "equal",
+        "operand": "source.ruby, source.rspec"
+      }
+    ]
+  }, // switch between code and test
 
   // TODO
-  { "keys": ["super+period"],
-      "command": "switch_between_code_and_test",
-      "args": {"split_view": false},
-      "context": [ { "key": "selector", "operator": "equal",
-                   "operand": "source.ruby, source.rspec, text.gherkin.feature"
-               } ]
-  }, // switch between code and test in single mode
-
-  { "keys": ["super+ctrl+period"],
-      "command": "switch_between_code_and_test",
-      "args": {"split_view": true},
-      "context": [ { "key": "selector", "operator": "equal",
-                   "operand": "source.ruby, source.rspec, text.gherkin.feature"
-               } ]
-  }, // switch between code and test in split view
-
   { "keys": ["super+shift+c"], "command": "generate_file" } // create new file
 ]

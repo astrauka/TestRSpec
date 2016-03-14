@@ -19,6 +19,7 @@
     "bundler": true,
     "spring": true,
   },
+  "ignored_directories": [".git", "vendor", "tmp"],
 
 
   // taken from RubyTest plugin
