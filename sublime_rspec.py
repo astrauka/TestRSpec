@@ -14,55 +14,34 @@ from rspec.switch_between_code_and_test import SwitchBetweenCodeAndTest
 
 class TestCurrentLineCommand(sublime_plugin.TextCommand):
   def run(self, edit):
-    print("Preparing to run rspec")
+    print("SublimeRSpec: Preparing to run rspec")
     context = TaskContext(self, edit)
     ExecuteSpec(context).current_line()
 
 class TestCurrentFileCommand(sublime_plugin.TextCommand):
   def run(self, edit):
-    print("Preparing to run rspec")
+    print("SublimeRSpec: Preparing to run rspec")
     context = TaskContext(self, edit)
     ExecuteSpec(context).current_line() # TODO RUN FILE
 
 class RunLastSpecCommand(sublime_plugin.TextCommand):
   def run(self, edit):
-    print("Preparing to run last rspec command")
+    print("SublimeRSpec: Preparing to run last rspec command")
     context = TaskContext(self, edit)
     ExecuteSpec(context).last_run()
 
 class DisplayOutputPanelCommand(sublime_plugin.TextCommand):
   def run(self, edit):
-    print("Preparing to display output panel")
+    print("SublimeRSpec: Preparing to display output panel")
     context = TaskContext(self, edit)
     context.display_output_panel()
 
 class SwitchBetweenCodeAndTestCommand(sublime_plugin.TextCommand):
   def run(self, edit):
-    print("Preparing to swith between code and test")
+    print("SublimeRSpec: Preparing to switch between code and test")
     context = TaskContext(self, edit)
     SwitchBetweenCodeAndTest(context).run()
 
-
-  # def run(self, args, split_view):
-  #   self.load_config()
-  #   possible_alternates = self.file_type().possible_alternate_files()
-  #   alternates = self.project_files(lambda file: file in possible_alternates)
-
-  #   for alternate in alternates:
-  #     if re.search(self.file_type().parent_dir_name(), alternate):
-  #       alternates = [alternate]
-  #       break
-
-  #   if alternates:
-  #     if split_view:
-  #       ShowPanels(self.window()).split()
-  #     if len(alternates) == 1:
-  #       self.window().open_file(alternates.pop())
-  #     else:
-  #       callback = functools.partial(self.on_selected, alternates)
-  #       self.window().show_quick_panel(alternates, callback)
-  #   else:
-  #     GenerateTestFile(self.window(), split_view).doIt()
 
 # Execute spec
 # /home/user/.rbenv/bin/rbenv  exec  bundle  exec  spring  rspec  spec/models/user_spec.rb:2

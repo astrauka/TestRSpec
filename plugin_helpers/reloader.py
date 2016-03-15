@@ -9,6 +9,7 @@ print('Reloading rspec modules')
 modules = [
   'plugin_helpers.decorators',
   'plugin_helpers.project_files',
+  'plugin_helpers.open_file',
   'rspec.output',
   'rspec.project_root',
   'rspec.task_context',

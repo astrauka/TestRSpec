@@ -21,6 +21,10 @@ class TaskContext(object):
   def file_name(self):
     return self.view().file_name()
 
+  @memoize
+  def file_base_name(self):
+    return os.path.basename(self.file_name())
+
   # from https://github.com/theskyliner/CopyFilepathWithLineNumbers/blob/master/CopyFilepathWithLineNumbers.py
   @memoize
   def line_number(self):
@@ -89,4 +93,3 @@ class TaskContext(object):
       file_matcher,
       self.from_settings("ignored_directories")
     ).filter()
-
