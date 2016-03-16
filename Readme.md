@@ -51,7 +51,7 @@ When preconditions are not satisfied outputs to panel.
 * show test panel X
 * go to file X
 * go to spec X
-* spec file
+* spec file X
 * save_all
 * create spec file
 * shortcuts/hotkeys, commands X

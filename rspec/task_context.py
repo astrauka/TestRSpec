@@ -9,9 +9,10 @@ class TaskContext(object):
   GEMFILE_NAME = "Gemfile"
   SPEC_FILE_POSTFIX = "_spec.rb"
 
-  def __init__(self, sublime_command, edit):
+  def __init__(self, sublime_command, edit, spec_target_is_file=False):
     self.sublime_command = sublime_command
     self.edit = edit
+    self.spec_target_is_file = spec_target_is_file
 
   @memoize
   def view(self):
@@ -40,7 +41,10 @@ class TaskContext(object):
 
   @memoize
   def spec_target(self):
-    return "{0}:{1}".format(self.file_name(), self.line_number())
+    if self.spec_target_is_file:
+      return self.file_name()
+    else:
+      return ":".join([self.file_name(), self.line_number()])
 
   @memoize
   def project_root(self):

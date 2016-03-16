@@ -16,13 +16,13 @@ class TestCurrentLineCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     print("SublimeRSpec: Preparing to run rspec")
     context = TaskContext(self, edit)
-    ExecuteSpec(context).current_line()
+    ExecuteSpec(context).current()
 
 class TestCurrentFileCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     print("SublimeRSpec: Preparing to run rspec")
-    context = TaskContext(self, edit)
-    ExecuteSpec(context).current_line() # TODO RUN FILE
+    context = TaskContext(self, edit, spec_target_is_file = True)
+    ExecuteSpec(context).current()
 
 class RunLastSpecCommand(sublime_plugin.TextCommand):
   def run(self, edit):
