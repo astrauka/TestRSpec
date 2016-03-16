@@ -10,6 +10,15 @@ Executed using sublime build tools `exec` command.
 
 When preconditions are not satisfied outputs to panel.
 
+# Configuration
+
+[Read this](http://www.granneman.com/webdev/editors/sublime-text/configuring-sublime-text/)
+if you want to know how Sublime package settings work.
+
+Find settings in "Preferences -> Package Settings -> SublimeRSpec"
+
+[Default settings](https://github.com/astrauka/SublimeRSpec/blob/master/SublimeRSpec.sublime-settings)
+
 # Spec command generation
 
 ```
@@ -52,7 +61,7 @@ When preconditions are not satisfied outputs to panel.
 * go to file X
 * go to spec X
 * spec file X
-* save_all
+* save_all X
 * create spec file
 * shortcuts/hotkeys, commands X
 * readme
@@ -61,6 +70,8 @@ When preconditions are not satisfied outputs to panel.
   * usage
   * shortcuts
 * configuration
+  * package settings
+  * package key bindings
 
 # Thanks to
 

@@ -21,8 +21,6 @@
   },
   "ignored_directories": [".git", "vendor", "tmp", "migrate"],
   "spec_folder": "spec",
-
-
-  // taken from RubyTest plugin
-  "save_on_run": false,
+  "save_current_file_on_run": true,
+  "save_all_files_on_run": false,
 }

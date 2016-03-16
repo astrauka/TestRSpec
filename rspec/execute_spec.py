@@ -2,6 +2,7 @@ from plugin_helpers.decorators import memoize
 from rspec.output import Output
 from rspec.spec_command import SpecCommand
 from rspec.last_run import LastRun
+from rspec.save_files import SaveFiles
 
 class ExecuteSpec(object):
   def __init__(self, context):
@@ -26,9 +27,13 @@ class ExecuteSpec(object):
     self.context.display_output_panel()
 
   def _execute(self, command_hash):
+    self._before_execute()
     self.context.log("Executing {0}\n".format(command_hash.get("shell_cmd")))
     self.context.window().run_command("exec", command_hash)
     LastRun.save(command_hash)
+
+  def _before_execute(self):
+    SaveFiles(self.context).run()
 
   def _notify_missing_project_root(self):
     self.context.log(

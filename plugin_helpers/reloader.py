@@ -13,6 +13,7 @@ modules = [
   'rspec.output',
   'rspec.project_root',
   'rspec.task_context',
+  'rspec.save_files',
   'rspec.spec_commands.bin_rspec',
   'rspec.spec_commands.ruby_rspec',
   'rspec.spec_commands.bundle',
