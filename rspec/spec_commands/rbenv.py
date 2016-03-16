@@ -6,7 +6,7 @@ class Rbenv(object):
     self.context = context
 
   def result(self):
-    if not self.context.from_settings("check_for", {}).get("rbenv"): return None
+    if not self.context.from_settings("check_for", {}).get("rbenv"): return
     if self._from_settings(): return "{0} exec".format(self._from_settings())
 
   @memoize

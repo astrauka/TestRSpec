@@ -17,7 +17,7 @@ class SwitchBetweenCodeAndTest(object):
       print("SublimeRSpec: No files found, searched for {0}".format(self._file_base_name()))
 
   def _files_by_path(self):
-    return None
+    return
 
   @memoize
   def _file_base_name(self):

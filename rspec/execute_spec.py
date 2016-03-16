@@ -27,7 +27,10 @@ class ExecuteSpec(object):
 
   def _notify_missing_project_root(self):
     self.context.log(
-      "Could not find 'spec/' folder traversing back from {0}".format(self.context.file_name()),
+      "Could not find '{0}/' folder traversing back from {1}".format(
+        self.context.from_settings("spec_folder"),
+        self.context.file_name()
+      ),
       level=Output.Levels.ERROR
     )
     self.context.display_output_panel()

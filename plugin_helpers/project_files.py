@@ -7,6 +7,8 @@ class ProjectFiles(object):
     self.ignored_directories = ignored_directories
 
   def filter(self):
+    if not self.project_root: return
+
     matches = []
     for dirname, _, files in self._walk(self.project_root):
       for file in filter(self.file_matcher, files):

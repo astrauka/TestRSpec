@@ -44,7 +44,7 @@ class TaskContext(object):
 
   @memoize
   def project_root(self):
-    return ProjectRoot(self.file_name()).result()
+    return ProjectRoot(self.file_name(), self.from_settings("spec_folder")).result()
 
   def window(self):
     return self.view().window()
@@ -83,7 +83,7 @@ class TaskContext(object):
   @memoize
   def gemfile_path(self):
     path = os.path.join(self.project_root(), TaskContext.GEMFILE_NAME)
-    if not os.path.isfile(path): return None
+    if not os.path.isfile(path): return
 
     return path
 

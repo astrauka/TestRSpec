@@ -20,9 +20,9 @@
     "spring": true,
   },
   "ignored_directories": [".git", "vendor", "tmp", "migrate"],
+  "spec_folder": "spec",
 
 
   // taken from RubyTest plugin
-  "ruby_rspec_folder": "spec",
   "save_on_run": false,
 }

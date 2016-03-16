@@ -6,7 +6,7 @@ class Rvm(object):
     self.context = context
 
   def result(self):
-    if not self.context.from_settings("check_for", {}).get("rvm"): return None
+    if not self.context.from_settings("check_for", {}).get("rvm"): return
     if self._from_settings(): return "{0} -S".format(self._from_settings())
 
   @memoize
