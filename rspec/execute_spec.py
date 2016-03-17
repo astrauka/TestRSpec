@@ -54,7 +54,11 @@ class ExecuteSpec(object):
 
   @memoize
   def _command_hash(self):
-    command = ' '.join([SpecCommand(self.context).result(), self.context.spec_target()])
+    command = "(cd {project_root} && {rspec_command} {target})".format(
+      project_root = self.context.project_root(),
+      rspec_command = SpecCommand(self.context).result(),
+      target = self.context.spec_target()
+    )
     pannel_settings = self.context.from_settings("panel_settings", {})
     env = self.context.from_settings("env", {})
 
