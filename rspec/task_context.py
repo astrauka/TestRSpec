@@ -41,10 +41,11 @@ class TaskContext(object):
 
   @memoize
   def spec_target(self):
+    relative_path = os.path.relpath(self.file_name(), self.project_root())
     if self.spec_target_is_file:
-      return self.file_name()
+      return relative_path
     else:
-      return ":".join([self.file_name(), self.line_number()])
+      return ":".join([relative_path, self.line_number()])
 
   @memoize
   def project_root(self):

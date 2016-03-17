@@ -62,6 +62,7 @@ Find settings in "Preferences -> Package Settings -> SublimeRSpec"
 * go to spec X
 * spec file X
 * save_all X
+* find spec file directly, exclude `app` dir from expected path
 * create spec file
 * shortcuts/hotkeys, commands X
 * readme
