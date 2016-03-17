@@ -1,36 +1,31 @@
-import sys, imp
+import sys, imp, os
 
 # Dependecy reloader
 # The original idea is borrowed from
 # https://github.com/wbond/sublime_package_control/blob/master/package_control/reloader.py
 
 print('Reloading rspec modules')
-
-modules = [
-  'plugin_helpers.decorators',
-  'plugin_helpers.project_files',
-  'plugin_helpers.open_file',
-  'rspec.output',
-  'rspec.project_root',
-  'rspec.task_context',
-  'rspec.save_files',
-  'rspec.spec_commands.bin_rspec',
-  'rspec.spec_commands.ruby_rspec',
-  'rspec.spec_commands.bundle',
-  'rspec.spec_commands.rbenv',
-  'rspec.spec_commands.rvm',
-  'rspec.spec_commands.spring',
-  'rspec.spec_commands.system_ruby',
-  'rspec.spec_command',
-  'rspec.last_run',
-  'rspec.execute_spec',
-  'rspec.switch_between_code_and_test',
+CODE_DIRS = [
+  'plugin_helpers',
+  'rspec',
 ]
-sys_modules = sys.modules
-modules_to_reload = [sys_modules.get(module) for module in modules if sys_modules.get(module)]
-# print([module.__name__ for module in modules_to_reload])
+PYTHON_FILE_EXT = '.py'
 
-for module in modules_to_reload:
+def _reload(dir, file):
+  (name, extension) = os.path.splitext(file)
+  if not extension == PYTHON_FILE_EXT: return
+
+  dirs = '.'.join(filter(None, os.path.split(dir)))
+  module = sys.modules.get('.'.join([dirs, name]))
+  if not module: return
+  # print(module.__name__)
+
   if 'on_module_reload' in module.__dict__:
     module.on_module_reload()
   imp.reload(module)
+
+for _ in range(2): # double reload required to update dependencies
+  for directory in CODE_DIRS:
+    for dir, _, files in os.walk(directory):
+      for file in files:
+        _reload(dir, file)
