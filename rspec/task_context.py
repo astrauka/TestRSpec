@@ -26,6 +26,10 @@ class TaskContext(object):
   def file_base_name(self):
     return os.path.basename(self.file_name())
 
+  @memoize
+  def file_relative_name(self):
+    return os.path.relpath(self.file_name(), self.project_root())
+
   # from https://github.com/theskyliner/CopyFilepathWithLineNumbers/blob/master/CopyFilepathWithLineNumbers.py
   @memoize
   def line_number(self):
@@ -41,11 +45,11 @@ class TaskContext(object):
 
   @memoize
   def spec_target(self):
-    relative_path = os.path.relpath(self.file_name(), self.project_root())
+    file_relative_name = self.file_relative_name()
     if self.spec_target_is_file:
-      return relative_path
+      return file_relative_name
     else:
-      return ":".join([relative_path, self.line_number()])
+      return ":".join([file_relative_name, self.line_number()])
 
   @memoize
   def project_root(self):

@@ -21,6 +21,7 @@
   },
   "ignored_directories": [".git", "vendor", "tmp", "migrate"],
   "spec_folder": "spec",
+  "ignored_spec_path_building_directories": ["app"],
   "save_current_file_on_run": true,
   "save_all_files_on_run": false,
 }
