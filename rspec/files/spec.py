@@ -10,10 +10,10 @@ class SpecFile(object):
   def result(self):
     if not self._relative_name().startswith(self.ignored_directory): return
 
-    spec_name = self._spec_name()
+    spec_name = self.spec_name()
     if os.path.isfile(spec_name): return spec_name
 
-  def _spec_name(self):
+  def spec_name(self):
     return os.path.join(
       self.context.project_root(),
       self.context.from_settings("spec_folder"),

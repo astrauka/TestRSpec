@@ -11,10 +11,6 @@ class CreateSpecFile(object):
     self.context = context
 
   def run(self):
-    # create file
-    #   determine spec file name
-    # fill with snippet data
-    #   determine class name
     self._create_directories()
     self._write_template()
     self._open()
@@ -23,7 +19,7 @@ class CreateSpecFile(object):
     os.makedirs(os.path.dirname(self._file_name()), exist_ok = True)
 
   def _write_template(self):
-    # if os.path.isfile(self._file_name()): return
+    if os.path.isfile(self._file_name()): return
 
     handler = open(self._file_name(), "w+")
     handler.write(self._spec_template())
@@ -39,7 +35,7 @@ class CreateSpecFile(object):
   @memoize
   def _file_name(self):
     ignored_directory = OppositeFile(self.context).ignored_directories()[1] or ""
-    return SpecFile(self.context, ignored_directory).result()
+    return SpecFile(self.context, ignored_directory).spec_name()
 
   @memoize
   def _spec_template(self):
