@@ -12,6 +12,7 @@ class SwitchBetweenCodeAndTest(object):
     self.context = context
 
   def run(self):
+    # prioritize matches by path
     files = unique(self._files_by_path() + self._files_by_name())
     if files:
       OpenFile(self.context.window(), files).run()

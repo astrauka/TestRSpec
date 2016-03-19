@@ -24,4 +24,10 @@
   "ignored_spec_path_building_directories": ["app"],
   "save_current_file_on_run": true,
   "save_all_files_on_run": false,
+  // snipped defined line by line
+  "spec_snippet": [
+    "Rspec.describe {1:class_name} do",
+    "",
+    "end",
+  ],
 }

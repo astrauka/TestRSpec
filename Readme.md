@@ -19,7 +19,20 @@ Find settings in "Preferences -> Package Settings -> SublimeRSpec"
 
 [Default settings](https://github.com/astrauka/SublimeRSpec/blob/master/SublimeRSpec.sublime-settings)
 
-# Spec command generation
+# Key bindings
+
+Find bindings in "Preferences -> Package Settings -> SublimeRSpec"
+
+[Default bindings](https://github.com/astrauka/SublimeRSpec/blob/master/Default.sublime-keymap)
+
+# Features
+
+## Run rspec
+
+Executes Sublime command to run rspec.
+Displays output in panel.
+
+Command generation
 
 ```
 # output example
@@ -54,6 +67,17 @@ Find settings in "Preferences -> Package Settings -> SublimeRSpec"
 #         spring
 ```
 
+## Switch between code and test
+
+Returns all matches by file name.
+Prioritizes matches by path as they are more likely the right ones.
+
+## Create spec file
+
+Creates spec file when launched in source file.
+
+Uses code snippet defined in settings.
+
 # TODO
 
 * last run X
@@ -62,9 +86,9 @@ Find settings in "Preferences -> Package Settings -> SublimeRSpec"
 * go to spec X
 * spec file X
 * save_all X
-* find spec file directly, exclude `app` dir from expected path
+* find spec file directly, exclude `app` dir from expected path X
 * create spec file
-* shortcuts/hotkeys, commands X
+* shortcuts/hotkeys, commands in Preferences
 * readme
   * description
   * screenshots
@@ -74,10 +98,12 @@ Find settings in "Preferences -> Package Settings -> SublimeRSpec"
   * package settings
   * package key bindings
 
-# Thanks to
+# Big thanks to
 
 Inspired by https://github.com/maltize/sublime-text-2-ruby-tests
 
 Parts that are taken:
 * test console theme
 * key bindings
+* idea of how to switch between code and test
+* idea of how to run spec
