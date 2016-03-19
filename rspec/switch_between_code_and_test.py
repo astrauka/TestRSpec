@@ -40,7 +40,7 @@ class SwitchBetweenCodeAndTest(object):
     return list(filter(None, files))
 
   def _files_by_name(self):
-    file_matcher = lambda file: file.endswith(self._file_base_name())
+    file_matcher = lambda file: file == self._file_base_name()
     return self.context.project_files(file_matcher)
 
   @memoize

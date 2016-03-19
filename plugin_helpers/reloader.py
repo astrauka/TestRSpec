@@ -1,4 +1,4 @@
-import sys, imp, os
+import sys, imp, os, sublime, sublime_plugin
 from rspec.rspec_print import rspec_print
 
 # Dependecy reloader
@@ -29,3 +29,22 @@ for _ in range(2): # double reload required to update dependencies
     for dir, _, files in os.walk(directory):
       for file in files:
         _reload(dir, file)
+
+class ReloadPlugin(sublime_plugin.EventListener):
+  PLUGIN_RELOAD_TIME_MS = 200
+
+  def on_post_save(self, view):
+    plugin_python_file = sys._current_frames().values()[0].f_back.f_globals['__file__']
+    file_name = view.file_name()
+    if not os.path.dirname(plugin_python_file) in file_name: return
+    if file_name == plugin_python_file: return
+
+    original_file_name = view.file_name()
+
+    def _open_original_file():
+      view.window().open_file(original_file_name)
+
+    plugin_view = view.window().open_file(plugin_python_file)
+    print("save", plugin_view.file_name())
+    plugin_view.run_command("save")
+    sublime.set_timeout_async(_open_original_file, self.PLUGIN_RELOAD_TIME_MS)

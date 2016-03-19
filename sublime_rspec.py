@@ -1,13 +1,14 @@
-import sublime_plugin, sys, os.path, imp
+import sys, os.path, imp, sublime_plugin
 
 BASE_PATH = os.path.abspath(os.path.dirname(__file__))
 sys.path += [BASE_PATH]
 
-# Make sure all dependencies are reloaded
+# reload plugin files on change
 if 'plugin_helpers.reloader' in sys.modules:
   imp.reload(sys.modules['plugin_helpers.reloader'])
 import plugin_helpers.reloader
 
+# Commands
 from rspec.rspec_print import rspec_print
 from rspec.execute_spec import ExecuteSpec
 from rspec.task_context import TaskContext

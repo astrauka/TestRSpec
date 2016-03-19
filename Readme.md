@@ -80,6 +80,7 @@ Uses code snippet defined in settings.
 
 # TODO
 
+* reload plugin on source file save X
 * last run X
 * show test panel X
 * go to file X
