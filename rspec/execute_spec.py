@@ -1,4 +1,4 @@
-from plugin_helpers.decorators import memoize
+from plugin_helpers.utils import memoize
 from rspec.output import Output
 from rspec.spec_command import SpecCommand
 from rspec.last_run import LastRun

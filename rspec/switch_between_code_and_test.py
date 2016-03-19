@@ -1,4 +1,4 @@
-from plugin_helpers.decorators import memoize
+from plugin_helpers.utils import memoize, unique
 from rspec.output import Output
 from plugin_helpers.open_file import OpenFile
 from rspec.rspec_print import rspec_print

@@ -1,5 +1,5 @@
 import os
-from plugin_helpers.decorators import memoize
+from plugin_helpers.utils import memoize
 
 class BinRspec(object):
   def __init__(self, context):

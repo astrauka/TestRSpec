@@ -37,3 +37,9 @@ class memoize(object):
     except KeyError:
       res = cache[key] = self.func(*args, **kw)
     return res
+
+# from http://stackoverflow.com/a/480227
+def unique(seq):
+  seen = set()
+  seen_add = seen.add
+  return [x for x in seq if not (x in seen or seen_add(x))]

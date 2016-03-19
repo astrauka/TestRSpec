@@ -1,4 +1,4 @@
-from plugin_helpers.decorators import memoize
+from plugin_helpers.utils import memoize
 from plugin_helpers.project_files import ProjectFiles
 from rspec.project_root import ProjectRoot
 from rspec.output import Output

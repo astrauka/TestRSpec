@@ -1,4 +1,4 @@
-from plugin_helpers.decorators import memoize
+from plugin_helpers.utils import memoize
 
 class Output(object):
   class Levels:
