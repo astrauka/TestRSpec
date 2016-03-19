@@ -30,4 +30,6 @@
     "",
     "end",
   ],
+  "source_file_extension": ".rb",
+  "spec_file_extension": "_spec.rb",
 }

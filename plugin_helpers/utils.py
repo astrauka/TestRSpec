@@ -43,3 +43,8 @@ def unique(seq):
   seen = set()
   seen_add = seen.add
   return [x for x in seq if not (x in seen or seen_add(x))]
+
+# from http://stackoverflow.com/a/2556252
+def rreplace(s, old, new, occurrence):
+  li = s.rsplit(old, occurrence)
+  return new.join(li)

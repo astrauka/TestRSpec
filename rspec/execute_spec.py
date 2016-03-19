@@ -2,7 +2,7 @@ from plugin_helpers.utils import memoize
 from rspec.output import Output
 from rspec.spec_command import SpecCommand
 from rspec.last_run import LastRun
-from rspec.save_files import SaveFiles
+from rspec.files.save import SaveFiles
 
 class ExecuteSpec(object):
   def __init__(self, context):
