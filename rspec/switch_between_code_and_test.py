@@ -27,23 +27,40 @@ class SwitchBetweenCodeAndTest(object):
   def _ignoring_spec_path_building_directories(self):
     # by spec/rel_path
     # by spec/rel_path-ignored_dir
-    direct_match = self._spec_file('')
-    if os.path.isfile(direct_match): return direct_match
+    ignored_directories = self._ignored_directories() + self._direct_match()
+    files = [self._file_ignoring_directory(directory) for directory in ignored_directories]
+    return list(filter(None, files))
 
-    for ignored_directory in self._ignored_directories():
-      if not self._file_relative_name().startswith(ignored_directory): next
-      spec_file = self._spec_file(ignored_directory)
-      if os.path.isfile(spec_file): return spec_file
+  def _file_ignoring_directory(self, directory):
+    if not self._file_relative_name().startswith(directory): return
+
+    spec_file = self._spec_file(directory)
+    if os.path.isfile(spec_file): return spec_file
+
+  def _spec_file(self, ignored_directory):
+    return os.path.join(
+      self.context.project_root(),
+      self.context.from_settings("spec_folder"),
+      self._file_relative_name().replace(ignored_directory, '', 1)
+    )
 
   def _appending_spec_path_building_directories(self):
     # by rel_path-spec
     # by rel_path-spec+ignored_dir
-    direct_match = self._source_file('')
-    if os.path.isfile(direct_match): return direct_match
+    appended_directories = self._ignored_directories() + self._direct_match()
+    files = [self._file_appending_directory(directory) for directory in appended_directories]
+    return list(filter(None, files))
 
-    for append_directory in self._ignored_directories():
-      source_file = self._source_file(append_directory)
-      if os.path.isfile(source_file): return source_file
+  def _file_appending_directory(self, directory):
+    source_file = self._source_file(directory)
+    if os.path.isfile(source_file): return source_file
+
+  def _source_file(self, append_directory):
+    return os.path.join(
+      self.context.project_root(),
+      append_directory,
+      self._file_relative_name().replace(self.context.from_settings("spec_folder") + os.sep, '', 1),
+    )
 
   @memoize
   def _file_relative_name(self):
@@ -72,16 +89,5 @@ class SwitchBetweenCodeAndTest(object):
     directories = self.context.from_settings("ignored_spec_path_building_directories") or []
     return [directory + os.sep for directory in directories]
 
-  def _spec_file(self, ignored_directory):
-    return os.path.join(
-      self.context.project_root(),
-      self.context.from_settings("spec_folder"),
-      self._file_relative_name().replace(ignored_directory, '', 1)
-    )
-
-  def _source_file(self, append_directory):
-    return os.path.join(
-      self.context.project_root(),
-      append_directory,
-      self._file_relative_name().replace(self.context.from_settings("spec_folder") + os.sep, '', 1),
-    )
+  def _direct_match(self):
+    return ['']
