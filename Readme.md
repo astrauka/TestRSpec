@@ -87,7 +87,7 @@ Uses code snippet defined in settings.
 * spec file X
 * save_all X
 * find spec file directly, exclude `app` dir from expected path X
-* create spec file
+* create spec file X
 * shortcuts/hotkeys, commands in Preferences
 * readme
   * description

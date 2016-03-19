@@ -1,17 +1,21 @@
 {
+  // spec output panel settings
   "panel_settings": {
     "encoding": "utf-8",
     "syntax": "Packages/SublimeRSpec/TestConsole.tmLanguage",
     "color_scheme": "Packages/SublimeRSpec/TestConsole.hidden-tmTheme",
   },
+  // environment variables for rspec command
   "env": {
   },
+  // rspec runner paths
   "paths": {
     "bin_rspec": "./bin/rspec",
     "rbenv": "~/.rbenv/bin/rbenv",
     "rvm": "~/.rvm/bin/rvm-auto-ruby",
     "system_ruby": "/usr/bin/env ruby",
   },
+  // which rubies to check for when running rspec
   "check_for": {
     "rbenv": true,
     "rvm": true,
@@ -19,10 +23,15 @@
     "bundler": true,
     "spring": true,
   },
+  // switch spec/code directories to skip when searching by file name
   "ignored_directories": [".git", "vendor", "tmp", "migrate"],
+  // specs root folder
   "spec_folder": "spec",
+  // app/models/user.rb spec should be found in spec/model/user_spec.rb, omitting 'app' folder
   "ignored_spec_path_building_directories": ["app"],
+  // auto save current file on spec run
   "save_current_file_on_run": true,
+  // auto save all files on spec run
   "save_all_files_on_run": false,
   // create spec snipped defined line by line
   "create_spec_snippet": [
@@ -32,7 +41,10 @@
   ],
   // create spec place cursor line number
   "create_spec_cursor_line": 2,
+  // source files extension
   "source_file_extension": ".rb",
+  // spec files extension
   "spec_file_extension": "_spec.rb",
-  "create_file_class_name_regexp": "(class|module)[ ]+([a-zA-Z0-9:]*)",
+  // regexp used to determine class name once creating new spec file
+  "create_spec_class_name_regexp": "(class|module)[ ]+([a-zA-Z0-9:]*)",
 }

@@ -46,7 +46,7 @@ class CreateSpecFile(object):
 
   def _class_name(self):
     body = self.context.view().substr(sublime.Region(0, self.context.view().size()))
-    matches = re.findall(self.context.from_settings("create_file_class_name_regexp"), body)
+    matches = re.findall(self.context.from_settings("create_spec_class_name_regexp"), body)
     names = []
     for descriptor, name in matches:
       names.append(name)
