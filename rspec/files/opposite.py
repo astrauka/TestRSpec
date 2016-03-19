@@ -25,7 +25,7 @@ class OppositeFile(object):
 
   def ignored_directories(self):
     directories = self.context.from_settings("ignored_spec_path_building_directories") or []
-    return [directory + os.sep for directory in directories] + self._direct_match()
+    return self._direct_match() + [directory + os.sep for directory in directories]
 
   def _direct_match(self):
-    return ['']
+    return [""]

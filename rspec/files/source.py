@@ -21,7 +21,7 @@ class SourceFile(object):
   def _name_wihtout_spec_directory(self):
     return self._relative_name().replace(
       self.context.from_settings("spec_folder") + os.sep,
-      '',
+      "",
       1
     )
 

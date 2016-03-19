@@ -12,6 +12,7 @@ from rspec.rspec_print import rspec_print
 from rspec.execute_spec import ExecuteSpec
 from rspec.task_context import TaskContext
 from rspec.switch_between_code_and_test import SwitchBetweenCodeAndTest
+from rspec.create_spec_file import CreateSpecFile
 
 class TestCurrentLineCommand(sublime_plugin.TextCommand):
   def run(self, edit):
@@ -42,3 +43,9 @@ class SwitchBetweenCodeAndTestCommand(sublime_plugin.TextCommand):
     rspec_print("Switching between code and test")
     context = TaskContext(self, edit)
     SwitchBetweenCodeAndTest(context).run()
+
+class CreateSpecFileCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    rspec_print("Creating sepc file")
+    context = TaskContext(self, edit)
+    CreateSpecFile(context).run()

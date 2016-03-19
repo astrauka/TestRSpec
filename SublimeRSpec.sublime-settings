@@ -24,12 +24,15 @@
   "ignored_spec_path_building_directories": ["app"],
   "save_current_file_on_run": true,
   "save_all_files_on_run": false,
-  // snipped defined line by line
-  "spec_snippet": [
-    "Rspec.describe {1:class_name} do",
+  // create spec snipped defined line by line
+  "create_spec_snippet": [
+    "RSpec.describe ${class_name} do",
     "",
     "end",
   ],
+  // create spec place cursor line number
+  "create_spec_cursor_line": 2,
   "source_file_extension": ".rb",
   "spec_file_extension": "_spec.rb",
+  "create_file_class_name_regexp": "(class|module)[ ]+([a-zA-Z0-9:]*)",
 }

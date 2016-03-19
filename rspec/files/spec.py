@@ -21,7 +21,7 @@ class SpecFile(object):
     )
 
   def _name_wihtout_ignored_directory(self):
-    return self._relative_name().replace(self.ignored_directory, '', 1)
+    return self._relative_name().replace(self.ignored_directory, "", 1)
 
   @memoize
   def _relative_name(self):
