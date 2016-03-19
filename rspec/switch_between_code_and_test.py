@@ -1,6 +1,7 @@
 from plugin_helpers.decorators import memoize
 from rspec.output import Output
 from plugin_helpers.open_file import OpenFile
+from rspec.rspec_print import rspec_print
 import os
 
 class SwitchBetweenCodeAndTest(object):
@@ -15,7 +16,7 @@ class SwitchBetweenCodeAndTest(object):
     if files:
       OpenFile(self.context.window(), files).run()
     else:
-      print("SublimeRSpec: No files found, searched for {0}".format(self._file_base_name()))
+      rspec_print("No files found, searched for {0}".format(self._file_base_name()))
 
   def _files_by_path(self):
     if self._searching_for_spec_file():
@@ -26,22 +27,23 @@ class SwitchBetweenCodeAndTest(object):
   def _ignoring_spec_path_building_directories(self):
     # by spec/rel_path
     # by spec/rel_path-ignored_dir
-    relative_name = self._file_relative_name()
-    ignored_directories = self._ignored_directories() or []
-    ignored_directories.insert(0, '') # no ignores
+    direct_match = self._spec_file('')
+    if os.path.isfile(direct_match): return direct_match
 
-    for ignored_directory in ignored_directories:
-      if not relative_name.startswith(ignored_directory): next
-      name = relative_name.replace(ignored_directory + os.sep, '', 1)
-      file = os.path.join(
-        self.context.project_root(),
-        self.context.from_settings("spec_folder"),
-        name
-      )
-      if os.path.isfile(file): return file
+    for ignored_directory in self._ignored_directories():
+      if not self._file_relative_name().startswith(ignored_directory): next
+      spec_file = self._spec_file(ignored_directory)
+      if os.path.isfile(spec_file): return spec_file
 
   def _appending_spec_path_building_directories(self):
-    return
+    # by rel_path-spec
+    # by rel_path-spec+ignored_dir
+    direct_match = self._source_file('')
+    if os.path.isfile(direct_match): return direct_match
+
+    for append_directory in self._ignored_directories():
+      source_file = self._source_file(append_directory)
+      if os.path.isfile(source_file): return source_file
 
   @memoize
   def _file_relative_name(self):
@@ -67,4 +69,19 @@ class SwitchBetweenCodeAndTest(object):
 
   @memoize
   def _ignored_directories(self):
-    return self.context.from_settings("ignored_spec_path_building_directories")
+    directories = self.context.from_settings("ignored_spec_path_building_directories") or []
+    return [directory + os.sep for directory in directories]
+
+  def _spec_file(self, ignored_directory):
+    return os.path.join(
+      self.context.project_root(),
+      self.context.from_settings("spec_folder"),
+      self._file_relative_name().replace(ignored_directory, '', 1)
+    )
+
+  def _source_file(self, append_directory):
+    return os.path.join(
+      self.context.project_root(),
+      append_directory,
+      self._file_relative_name().replace(self.context.from_settings("spec_folder") + os.sep, '', 1),
+    )

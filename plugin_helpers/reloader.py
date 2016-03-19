@@ -1,10 +1,11 @@
 import sys, imp, os
+from rspec.rspec_print import rspec_print
 
 # Dependecy reloader
 # The original idea is borrowed from
 # https://github.com/wbond/sublime_package_control/blob/master/package_control/reloader.py
 
-print('Reloading rspec modules')
+rspec_print('Reloading rspec modules')
 CODE_DIRS = [
   'plugin_helpers',
   'rspec',
@@ -18,7 +19,6 @@ def _reload(dir, file):
   dirs = '.'.join(filter(None, os.path.split(dir)))
   module = sys.modules.get('.'.join([dirs, name]))
   if not module: return
-  # print(module.__name__)
 
   if 'on_module_reload' in module.__dict__:
     module.on_module_reload()
