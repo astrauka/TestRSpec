@@ -1,0 +1,6 @@
+SublimeRSpec
+
+Documentation can be found on https://github.com/astrauka/SublimeRSpec
+Please report issues/suggestions there.
+
+Have fun!
