@@ -77,7 +77,7 @@ class TaskContext(object):
 
   @memoize
   def settings(self):
-    return sublime.load_settings("{0}.sublime-settings".format(TaskContext.PACKAGE_NAME))
+    return self.view().settings()
 
   def from_settings(self, key, default_value = None):
     return self.settings().get(key, default_value)

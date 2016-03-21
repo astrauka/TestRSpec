@@ -94,7 +94,6 @@ Uses code snippet defined in settings.
 
 ## TODO
 
-- [ ] project specific settings
 - [ ] release package
 
 ## Acknowledgments
@@ -122,6 +121,7 @@ Help is always welcome. Create an issue is you need help.
 * [Extract package](https://github.com/SublimeText/ExtractSublimePackage) -
 `view.execute_command("extract_single_package_file", "Default")` to extract default package and understand plugin development basics
 * [Package settings](https://www.sublimetext.com/docs/3/packages.html)
+* [Unofficial documentation](http://docs.sublimetext.info/en/latest/index.html)
 
 ## Changelog
 
