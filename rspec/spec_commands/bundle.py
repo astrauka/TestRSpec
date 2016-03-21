@@ -5,7 +5,7 @@ class Bundle(object):
     self.context = context
 
   def result(self):
-    if not self.context.from_settings("check_for", {}).get("bundler"): return
+    if not self.context.from_settings("check_for_bundler"): return
     if self.gemfile_exists(): return "bundle exec"
 
   def gemfile_exists(self):

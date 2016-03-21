@@ -9,20 +9,16 @@
   "env": {
   },
   // rspec runner paths
-  "paths": {
-    "bin_rspec": "./bin/rspec",
-    "rbenv": "~/.rbenv/bin/rbenv",
-    "rvm": "~/.rvm/bin/rvm-auto-ruby",
-    "system_ruby": "/usr/bin/env ruby",
-  },
+  "paths_bin_rspec": "./bin/rspec",
+  "paths_rbenv": "~/.rbenv/bin/rbenv",
+  "paths_rvm": "~/.rvm/bin/rvm-auto-ruby",
+  "paths_system_ruby": "/usr/bin/env ruby",
   // which rubies to check for when running rspec
-  "check_for": {
-    "rbenv": true,
-    "rvm": true,
-    "system_ruby": true,
-    "bundler": true,
-    "spring": true,
-  },
+  "check_for_rbenv": true,
+  "check_for_rvm": true,
+  "check_for_system_ruby": true,
+  "check_for_bundler": true,
+  "check_for_spring": true,
   // switch spec/code directories to skip when searching by file name
   "ignored_directories": [".git", "vendor", "tmp", "migrate"],
   // specs root folder

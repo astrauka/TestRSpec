@@ -6,10 +6,10 @@ class Rbenv(object):
     self.context = context
 
   def result(self):
-    if not self.context.from_settings("check_for", {}).get("rbenv"): return
+    if not self.context.from_settings("check_for_rbenv"): return
     if self._from_settings(): return "{0} exec".format(self._from_settings())
 
   @memoize
   def _from_settings(self):
-    file = os.path.expanduser(self.context.from_settings("paths", {}).get("rbenv"))
+    file = os.path.expanduser(self.context.from_settings("paths_rbenv"))
     if file and os.path.isfile(file): return file

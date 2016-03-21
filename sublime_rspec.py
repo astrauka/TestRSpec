@@ -1,13 +1,35 @@
-import sys, os.path, imp, sublime_plugin
+import sys, os.path, imp, sublime, sublime_plugin
 
 BASE_PATH = os.path.abspath(os.path.dirname(__file__))
 sys.path += [BASE_PATH]
 
+# =======
 # reload plugin files on change
 if 'plugin_helpers.reloader' in sys.modules:
   imp.reload(sys.modules['plugin_helpers.reloader'])
 import plugin_helpers.reloader
 
+class ReloadPlugin(sublime_plugin.EventListener):
+  PLUGIN_RELOAD_TIME_MS = 200
+
+  def on_post_save(self, view):
+    plugin_python_file = __file__
+    file_name = view.file_name()
+    if not file_name.endswith('.py'): return
+    if not os.path.dirname(plugin_python_file) in file_name: return
+    if file_name == plugin_python_file: return
+
+    original_file_name = view.file_name()
+
+    def _open_original_file():
+      view.window().open_file(original_file_name)
+
+    plugin_view = view.window().open_file(plugin_python_file)
+    print("save", plugin_view.file_name())
+    plugin_view.run_command("save")
+    sublime.set_timeout_async(_open_original_file, self.PLUGIN_RELOAD_TIME_MS)
+
+# =======
 # Commands
 from rspec.rspec_print import rspec_print
 from rspec.execute_spec import ExecuteSpec

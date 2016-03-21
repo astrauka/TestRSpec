@@ -94,25 +94,8 @@ Uses code snippet defined in settings.
 
 ## TODO
 
-* reload plugin on source file save X
-* last run X
-* show test panel X
-* go to file X
-* go to spec X
-* spec file X
-* save_all X
-* find spec file directly, exclude `app` dir from expected path X
-* create spec file X
-* shortcuts/hotkeys, commands in Preferences X
-* readme
-  * description X
-  * screenshots
-  * usage X
-  * shortcuts X
-* configuration X
-  * package settings X
-  * package key bindings X
-* release package
+- [ ] project specific settings
+- [ ] release package
 
 ## Acknowledgments
 

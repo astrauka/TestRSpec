@@ -5,7 +5,7 @@ class Spring(object):
     self.context = context
 
   def result(self):
-    if not self.context.from_settings("check_for", {}).get("spring"): return
+    if not self.context.from_settings("check_for_spring"): return
     if self.spring_included(): return "spring"
 
   def spring_included(self):
