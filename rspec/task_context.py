@@ -5,7 +5,7 @@ from rspec.output import Output
 import sublime, os
 
 class TaskContext(object):
-  PACKAGE_NAME = "SublimeRSpec"
+  PACKAGE_NAME = "TestRSpec"
   GEMFILE_NAME = "Gemfile"
   SPEC_FILE_POSTFIX = "_spec.rb"
 

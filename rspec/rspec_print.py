@@ -1,2 +1,2 @@
 def rspec_print(*args):
-  print("SublimeRSpec:", *args)
+  print("TestRSpec:", *args)

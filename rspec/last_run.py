@@ -1,7 +1,7 @@
 import sublime
 
 class LastRun(object):
-  SETTINGS_FILE = "SublimeRSpec.last-run"
+  SETTINGS_FILE = "TestRSpec.last-run"
 
   @classmethod
   def save(klass, command_hash):

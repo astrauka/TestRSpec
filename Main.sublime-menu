@@ -3,8 +3,8 @@
     "id": "tools",
     "children": [
       {
-        "id": "SublimeRSpec",
-        "caption": "SublimeRSpec",
+        "id": "TestRSpec",
+        "caption": "TestRSpec",
         "children": [
           {
             "caption": "Test Current Line",
@@ -41,28 +41,28 @@
         "id": "package-settings",
         "children": [
           {
-            "caption": "SublimeRSpec",
+            "caption": "TestRSpec",
             "id": "sublime-rspec",
             "children": [
               {
                   "command": "open_file",
-                  "args": {"file": "${packages}/SublimeRSpec/SublimeRSpec.sublime-settings"},
+                  "args": {"file": "${packages}/TestRSpec/TestRSpec.sublime-settings"},
                   "caption": "Settings – Default"
               },
               {
                   "command": "open_file",
-                  "args": {"file": "${packages}/User/SublimeRSpec (${platform}).sublime-settings"},
+                  "args": {"file": "${packages}/User/TestRSpec (${platform}).sublime-settings"},
                   "caption": "Settings – User"
               },
               { "caption": "-" },
               {
                   "command": "open_file",
-                  "args": {"file": "${packages}/SublimeRSpec/Default.sublime-keymap"},
+                  "args": {"file": "${packages}/TestRSpec/Default.sublime-keymap"},
                   "caption": "Key Bindings – Default"
               },
               {
                   "command": "open_file",
-                  "args": {"file": "${packages}/User/SublimeRSpec (${platform}).sublime-keymap"},
+                  "args": {"file": "${packages}/User/Default (${platform}).sublime-keymap"},
                   "caption": "Key Bindings – User"
               },
             ]

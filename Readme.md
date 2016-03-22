@@ -24,15 +24,15 @@ When preconditions are not satisfied outputs to panel.
 [Read this](http://www.granneman.com/webdev/editors/sublime-text/configuring-sublime-text/)
 if you want to know how Sublime package settings work.
 
-Find settings in "Preferences -> Package Settings -> SublimeRSpec"
+Find settings in "Preferences -> Package Settings -> TestRSpec"
 
-[Default settings](https://github.com/astrauka/SublimeRSpec/blob/master/SublimeRSpec.sublime-settings)
+[Default settings](https://github.com/astrauka/TestRSpec/blob/master/TestRSpec.sublime-settings)
 
 ## Key bindings
 
-Find bindings in "Preferences -> Package Settings -> SublimeRSpec"
+Find bindings in "Preferences -> Package Settings -> TestRSpec"
 
-[Default bindings](https://github.com/astrauka/SublimeRSpec/blob/master/Default.sublime-keymap)
+[Default bindings](https://github.com/astrauka/TestRSpec/blob/master/Default.sublime-keymap)
 
 ## Features
 
@@ -94,6 +94,7 @@ Uses code snippet defined in settings.
 
 ## TODO
 
+- [ ] recordings
 - [ ] release package
 
 ## Acknowledgments

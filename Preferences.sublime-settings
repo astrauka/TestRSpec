@@ -2,8 +2,8 @@
   // spec output panel settings
   "panel_settings": {
     "encoding": "utf-8",
-    "syntax": "Packages/SublimeRSpec/themes/TestConsole.tmLanguage",
-    "color_scheme": "Packages/SublimeRSpec/themes/TestConsole.hidden-tmTheme",
+    "syntax": "Packages/TestRSpec/themes/TestConsole.tmLanguage",
+    "color_scheme": "Packages/TestRSpec/themes/TestConsole.hidden-tmTheme",
   },
   // environment variables for rspec command
   "env": {

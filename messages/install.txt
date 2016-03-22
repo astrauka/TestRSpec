@@ -1,6 +1,6 @@
-SublimeRSpec
+TestRSpec
 
-Documentation can be found on https://github.com/astrauka/SublimeRSpec
+Documentation can be found on https://github.com/astrauka/TestRSpec
 Please report issues/suggestions there.
 
 Have fun!
