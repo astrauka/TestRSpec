@@ -6,6 +6,8 @@ RSpec plugin for Sublime Text 3
 
 Run, navigate and create specs from Sublime editor.
 
+![Features](recordings/features.gif)
+
 ## Motivation
 
 I have used [RubyTest](https://github.com/maltize/sublime-text-2-ruby-tests)
@@ -94,7 +96,6 @@ Uses code snippet defined in settings.
 
 ## TODO
 
-- [ ] recordings
 - [ ] release package
 
 ## Acknowledgments
