@@ -86,7 +86,9 @@ Command generation
 ### Switch between code and test
 
 Returns all matches by file name.
-Prioritizes matches by path as they are more likely the right ones.
+
+Prioritizes matches by path as they are more likely the right ones
+such that in most cases you pick the first match.
 
 ### Create spec file
 

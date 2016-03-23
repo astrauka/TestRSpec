@@ -1,7 +1,6 @@
 from plugin_helpers.utils import memoize
 from plugin_helpers.open_file import OpenFile
 from rspec.files.opposite import OppositeFile
-from rspec.files.spec import SpecFile
 import os, re, sublime
 
 class CreateSpecFile(object):
@@ -11,6 +10,8 @@ class CreateSpecFile(object):
     self.context = context
 
   def run(self):
+    if self.context.is_test_file(): return
+
     self._create_directories()
     self._write_template()
     self._open()
@@ -34,8 +35,19 @@ class CreateSpecFile(object):
 
   @memoize
   def _file_name(self):
-    ignored_directory = OppositeFile(self.context).ignored_directories()[1] or ""
-    return SpecFile(self.context, ignored_directory).spec_name()
+    relative_name = os.path.join(self._spec_folder(), OppositeFile(self.context).relative_name())
+    for ignored_directory in OppositeFile(self.context).ignored_directories():
+      relative_name = self._spec_name_with_ignore(ignored_directory, relative_name)
+
+    return os.path.join(self.context.project_root(), relative_name)
+
+  def _spec_name_with_ignore(self, ignored_directory, relative_name):
+    ignore = os.path.join(self._spec_folder(), ignored_directory)
+    return os.path.join(self._spec_folder(), relative_name.replace(ignore, "", 1))
+
+  @memoize
+  def _spec_folder(self):
+    return self.context.from_settings("spec_folder")
 
   @memoize
   def _spec_template(self):
