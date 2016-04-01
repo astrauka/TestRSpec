@@ -1,7 +1,5 @@
 # Sublime RSpec
 
-THIS IS WIP, please do not use it!!!
-
 RSpec plugin for Sublime Text 3
 
 Run, navigate and create specs from Sublime editor.
