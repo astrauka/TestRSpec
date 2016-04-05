@@ -1,0 +1,6 @@
+TestRSpec:
+
+Fixes
+=====
+
+* fix plugin file loading

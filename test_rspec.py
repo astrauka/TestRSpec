@@ -1,7 +1,11 @@
 import sys, os.path, imp, sublime, sublime_plugin
 
 BASE_PATH = os.path.abspath(os.path.dirname(__file__))
-sys.path += [BASE_PATH]
+CODE_DIRS = [
+  'plugin_helpers',
+  'rspec',
+]
+sys.path += [BASE_PATH] + [os.path.join(BASE_PATH, f) for f in CODE_DIRS]
 
 # =======
 # reload plugin files on change

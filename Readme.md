@@ -1,4 +1,4 @@
-# Sublime RSpec
+# Sublime TestRSpec
 
 RSpec plugin for Sublime Text 3
 
@@ -106,10 +106,6 @@ Creates spec file when launched in source file.
 
 Uses code snippet defined in settings.
 
-## TODO
-
-- [ ] release package
-
 ## Acknowledgments
 
 Inspired by https://github.com/maltize/sublime-text-2-ruby-tests
@@ -132,8 +128,8 @@ Help is always welcome. Create an issue is you need help.
 * [Documentation](https://www.sublimetext.com/docs/3/)
 * [Api reference](https://www.sublimetext.com/docs/3/api_reference.html)
 * [Auto reloading](https://forum.sublimetext.com/t/auto-reloading-of-python-module-files-used-by-plugin/5321/7)
-* [Extract package](https://github.com/SublimeText/ExtractSublimePackage) -
-`view.execute_command("extract_single_package_file", "Default")` to extract default package and understand plugin development basics
+* [Extract package](https://github.com/skuroda/PackageResourceViewer) -
+to extract default package and understand plugin development basics
 * [Package settings](https://www.sublimetext.com/docs/3/packages.html)
 * [Unofficial documentation](http://docs.sublimetext.info/en/latest/index.html)
 
@@ -142,6 +138,10 @@ Help is always welcome. Create an issue is you need help.
 ### v1.0.0
 
 * Initial release
+
+### v1.0.1
+
+* fix plugin file loading
 
 ## Copyright and license
 
