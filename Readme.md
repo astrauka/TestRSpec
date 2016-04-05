@@ -13,6 +13,18 @@ plugin for some time and was not happy with it.
 
 So I decided to create a simple to understand and develop plugin targeting only `rspec`.
 
+## Installation
+
+With [Package Control](http://wbond.net/sublime_packages/package_control):
+
+1. Run “Package Control: Install Package” command, find and install `Test Rspec` plugin.
+2. Restart SublimeText editor
+
+Manually:
+
+1. Clone this git repository into your packages folder (in SublimeText, Preferences -> Browse Packages to open this folder)
+2. Restart SublimeText editor
+
 ## Output
 
 Executed using sublime build tools `exec` command.
