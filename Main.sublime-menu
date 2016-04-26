@@ -51,7 +51,7 @@
               },
               {
                   "command": "open_file",
-                  "args": {"file": "${packages}/User/TestRSpec (${platform}).sublime-settings"},
+                  "args": {"file": "${packages}/User/TestRSpec.sublime-settings"},
                   "caption": "Settings – User"
               },
               { "caption": "-" },

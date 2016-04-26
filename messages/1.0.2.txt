@@ -1,0 +1,6 @@
+TestRSpec:
+
+Improvements
+=====
+
+* allow adding to path for spec command run

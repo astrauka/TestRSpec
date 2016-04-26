@@ -106,6 +106,22 @@ Creates spec file when launched in source file.
 
 Uses code snippet defined in settings.
 
+## Troubleshooting
+
+### Ruby not found
+
+Example error:
+
+```
+/usr/bin/env: ruby: No such file or directory
+```
+
+Update package settings with path to ruby, for `rbenv` that's:
+
+```json
+  "rspec_add_to_path": "$HOME/.rbenv/shims",
+```
+
 ## Acknowledgments
 
 Inspired by https://github.com/maltize/sublime-text-2-ruby-tests
@@ -142,6 +158,10 @@ to extract default package and understand plugin development basics
 ### v1.0.1
 
 * fix plugin file loading
+
+### v1.0.2
+
+* allow adding to path for spec command run
 
 ## Copyright and license
 

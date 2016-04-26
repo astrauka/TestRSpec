@@ -8,6 +8,7 @@
   // environment variables for rspec command
   "env": {
   },
+  "rspec_add_to_path": "",
   // rspec runner paths
   "paths_bin_rspec": "./bin/rspec",
   "paths_rbenv": "~/.rbenv/bin/rbenv",
