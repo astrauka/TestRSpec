@@ -1,0 +1,6 @@
+TestRSpec:
+
+Improvements
+=====
+
+* make spec/file switch configurable on direct match found

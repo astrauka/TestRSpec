@@ -149,20 +149,6 @@ to extract default package and understand plugin development basics
 * [Package settings](https://www.sublimetext.com/docs/3/packages.html)
 * [Unofficial documentation](http://docs.sublimetext.info/en/latest/index.html)
 
-## Changelog
-
-### v1.0.0
-
-* Initial release
-
-### v1.0.1
-
-* fix plugin file loading
-
-### v1.0.2
-
-* allow adding to path for spec command run
-
 ## Copyright and license
 
 Copyright © 2016 [@astrauka](http://twitter.com/astrauka)

@@ -12,19 +12,28 @@ class SwitchBetweenCodeAndTest(object):
     self.context = context
 
   def run(self):
-    # prioritize matches by path
-    files = unique(self._files_by_path() + self._files_by_name())
+    files = self._direct_match() or self._prioritize_by_path()
+
     if files:
       OpenFile(self.context.window(), files).run()
     else:
       rspec_print("No files found, searched for {0}".format(self._file_base_name()))
 
+  def _direct_match(self):
+    direct_match = self.context.from_settings("switch_code_test_immediately_on_direct_match")
+    return direct_match and self._files_by_path()
+
+  @memoize
   def _files_by_path(self):
     if self._searching_for_spec_file():
       return self._ignoring_spec_path_building_directories()
     else:
       return self._appending_spec_path_building_directories()
 
+  def _prioritize_by_path(self):
+    return unique(self._files_by_path() + self._files_by_name())
+
+  @memoize
   def _ignoring_spec_path_building_directories(self):
     # by spec/rel_path
     # by spec/rel_path-ignored_dir
@@ -32,6 +41,7 @@ class SwitchBetweenCodeAndTest(object):
     files = [SpecFile(self.context, directory).result() for directory in ignored_directories]
     return list(filter(None, files))
 
+  @memoize
   def _appending_spec_path_building_directories(self):
     # by rel_path-spec
     # by rel_path-spec+ignored_dir
@@ -39,6 +49,7 @@ class SwitchBetweenCodeAndTest(object):
     files = [SourceFile(self.context, directory).result() for directory in appended_directories]
     return list(filter(None, files))
 
+  @memoize
   def _files_by_name(self):
     file_matcher = lambda file: file == self._file_base_name()
     return self.context.project_files(file_matcher)
@@ -47,5 +58,6 @@ class SwitchBetweenCodeAndTest(object):
   def _file_base_name(self):
     return OppositeFile(self.context).base_name()
 
+  @memoize
   def _searching_for_spec_file(self):
     return not self.context.is_test_file()

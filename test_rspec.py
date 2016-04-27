@@ -14,16 +14,17 @@ if 'plugin_helpers.reloader' in sys.modules:
 import plugin_helpers.reloader
 
 class ReloadPlugin(sublime_plugin.EventListener):
+  PACKAGE_NAME = 'TestRSpec'
   PLUGIN_RELOAD_TIME_MS = 200
+  PLUGIN_PYTHON_FILE = os.path.join(PACKAGE_NAME, "test_rspec.py")
 
   def on_post_save(self, view):
-    plugin_python_file = __file__
     file_name = view.file_name()
-    if not file_name.endswith('.py'): return
-    if not os.path.dirname(plugin_python_file) in file_name: return
-    if file_name == plugin_python_file: return
+    if not ReloadPlugin.PACKAGE_NAME in file_name: return
+    if ReloadPlugin.PLUGIN_PYTHON_FILE in file_name: return
 
     original_file_name = view.file_name()
+    plugin_python_file = os.path.join(sublime.packages_path(), ReloadPlugin.PLUGIN_PYTHON_FILE)
 
     def _open_original_file():
       view.window().open_file(original_file_name)
