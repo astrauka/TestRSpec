@@ -46,7 +46,7 @@
             "children": [
               {
                   "command": "open_file",
-                  "args": {"file": "${packages}/TestRSpec/TestRSpec.sublime-settings"},
+                  "args": {"file": "${packages}/TestRSpec/Preferences.sublime-settings"},
                   "caption": "Settings – Default"
               },
               {

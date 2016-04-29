@@ -38,7 +38,7 @@ if you want to know how Sublime package settings work.
 
 Find settings in "Preferences -> Package Settings -> TestRSpec"
 
-[Default settings](https://github.com/astrauka/TestRSpec/blob/master/TestRSpec.sublime-settings)
+[Default settings](https://github.com/astrauka/TestRSpec/blob/master/Preferences.sublime-settings)
 
 ## Key bindings
 

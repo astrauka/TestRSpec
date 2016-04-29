@@ -25,6 +25,7 @@ class ReloadPlugin(sublime_plugin.EventListener):
 
     original_file_name = view.file_name()
     plugin_python_file = os.path.join(sublime.packages_path(), ReloadPlugin.PLUGIN_PYTHON_FILE)
+    if not os.path.isfile(plugin_python_file): return
 
     def _open_original_file():
       view.window().open_file(original_file_name)

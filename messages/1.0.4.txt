@@ -1,0 +1,11 @@
+TestRSpec:
+
+Fixes
+=====
+
+* fix default settings file path
+
+Improvements
+=====
+
+* add commands to launch panel
