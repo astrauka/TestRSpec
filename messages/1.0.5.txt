@@ -1,0 +1,11 @@
+TestRSpec:
+
+Fixes
+=====
+
+* fix create spec file directory
+
+Notes
+=====
+
+Please restart Sublime in case you encounter any issues

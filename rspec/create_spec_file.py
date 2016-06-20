@@ -43,7 +43,10 @@ class CreateSpecFile(object):
 
   def _spec_name_with_ignore(self, ignored_directory, relative_name):
     ignore = os.path.join(self._spec_folder(), ignored_directory)
-    return os.path.join(self._spec_folder(), relative_name.replace(ignore, "", 1))
+    if ignore in relative_name:
+      return os.path.join(self._spec_folder(), relative_name.replace(ignore, "", 1))
+    else:
+      return relative_name
 
   @memoize
   def _spec_folder(self):
