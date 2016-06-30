@@ -30,7 +30,7 @@
   "save_current_file_on_run": true,
   // auto save all files on spec run
   "save_all_files_on_run": false,
-  // create spec snipped defined line by line
+  // create spec snippet defined line by line
   "create_spec_snippet": [
     "RSpec.describe ${class_name} do",
     "",
