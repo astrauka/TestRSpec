@@ -27,11 +27,10 @@ class CreateSpecFile(object):
     handler.close()
 
   def _open(self):
-    OpenFile(self.context.window(), self._file_name()).run()
-    self.context.window().active_view().run_command(
-      "goto_line",
-      { "line": self.context.from_settings("create_spec_cursor_line") }
-    )
+    OpenFile(
+      self.context.window(),
+      "{}:{}".format(self._file_name(), self._create_spec_cursor_line())
+    ).run()
 
   @memoize
   def _file_name(self):
@@ -51,6 +50,10 @@ class CreateSpecFile(object):
   @memoize
   def _spec_folder(self):
     return self.context.from_settings("spec_folder")
+
+  @memoize
+  def _create_spec_cursor_line(self):
+    return self.context.from_settings("create_spec_cursor_line")
 
   @memoize
   def _spec_template(self):

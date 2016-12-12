@@ -1,4 +1,5 @@
 import functools
+import sublime
 
 class OpenFile(object):
   def __init__(self, window, files):
@@ -7,7 +8,7 @@ class OpenFile(object):
 
   def run(self):
     if self._single_file():
-      self.window.open_file(self.files[0])
+      self.window.open_file(self.files[0], sublime.ENCODED_POSITION)
     else:
       self.window.show_quick_panel(self.files, self._callback())
 
@@ -20,4 +21,4 @@ class OpenFile(object):
   def _on_selected(self, files, index):
     if index == -1: return
 
-    self.window.open_file(files[index])
+    self.window.open_file(files[index], sublime.ENCODED_POSITION)
