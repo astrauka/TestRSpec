@@ -3,6 +3,7 @@ from rspec.spec_commands.spring import Spring
 from rspec.spec_commands.rbenv import Rbenv
 from rspec.spec_commands.rvm import Rvm
 from rspec.spec_commands.system_ruby import SystemRuby
+from rspec.spec_commands.zeus import Zeus
 
 class RubyRspec(object):
   def __init__(self, context):
@@ -16,6 +17,7 @@ class RubyRspec(object):
         None, [
           self._ruby(),
           Bundle(self.context).result(),
+          Zeus(self.context).result(),
           Spring(self.context).result(),
           self.context.from_settings("rspec_command"),
         ]

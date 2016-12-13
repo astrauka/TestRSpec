@@ -22,6 +22,8 @@
   "check_for_system_ruby": true,
   "check_for_bundler": true,
   "check_for_spring": true,
+  // use zeus to run specs
+  "use_zeus": false,
   // switch spec/code directories to skip when searching by file name
   "ignored_directories": [".git", "vendor", "tmp", "migrate"],
   // specs root folder
