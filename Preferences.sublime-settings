@@ -5,6 +5,8 @@
     "syntax": "Packages/TestRSpec/themes/TestConsole.tmLanguage",
     "color_scheme": "Packages/TestRSpec/themes/TestConsole.hidden-tmTheme",
   },
+  // rspec command
+  "rspec_command": "rspec",
   // environment variables for rspec command
   "env": {
   },
