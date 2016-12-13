@@ -134,7 +134,7 @@ Parts that are taken:
 
 ## Contribution
 
-Help is always welcome. Create an issue is you need help.
+Help is always welcome. Create an issue if you need help.
 
 ### Sublime Text plugin development links
 
