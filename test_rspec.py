@@ -75,6 +75,6 @@ class SwitchBetweenCodeAndTestCommand(sublime_plugin.TextCommand):
 
 class CreateSpecFileCommand(sublime_plugin.TextCommand):
   def run(self, edit):
-    rspec_print("Creating sepc file")
+    rspec_print("Creating spec file")
     context = TaskContext(self, edit)
     CreateSpecFile(context).run()
