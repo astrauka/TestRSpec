@@ -17,10 +17,10 @@ class SpecFile(object):
     return os.path.join(
       self.context.project_root(),
       self.context.from_settings("spec_folder"),
-      self._name_wihtout_ignored_directory()
+      self._name_without_ignored_directory()
     )
 
-  def _name_wihtout_ignored_directory(self):
+  def _name_without_ignored_directory(self):
     return self._relative_name().replace(self.ignored_directory, "", 1)
 
   @memoize

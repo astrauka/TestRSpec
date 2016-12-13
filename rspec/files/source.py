@@ -15,10 +15,10 @@ class SourceFile(object):
     return os.path.join(
       self.context.project_root(),
       self.append_directory,
-      self._name_wihtout_spec_directory()
+      self._name_without_spec_directory()
     )
 
-  def _name_wihtout_spec_directory(self):
+  def _name_without_spec_directory(self):
     return self._relative_name().replace(
       self.context.from_settings("spec_folder") + os.sep,
       "",
