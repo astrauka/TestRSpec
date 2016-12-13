@@ -5,7 +5,9 @@ from rspec.files.opposite import OppositeFile
 from rspec.files.spec import SpecFile
 from rspec.files.source import SourceFile
 from rspec.rspec_print import rspec_print
+from create_spec_file import CreateSpecFile
 import os
+import sublime
 
 class SwitchBetweenCodeAndTest(object):
   def __init__(self, context):
@@ -16,8 +18,19 @@ class SwitchBetweenCodeAndTest(object):
 
     if files:
       OpenFile(self.context.window(), files).run()
+    elif self._fall_back_to_create_spec():
+      CreateSpecFile(self.context).run()
     else:
       rspec_print("No files found, searched for {0}".format(self._file_base_name()))
+
+  def _fall_back_to_create_spec(self):
+    if self.context.is_test_file(): return False
+
+    return sublime.ok_cancel_dialog(
+      "Spec file not found.\n"
+      "Do you want to create it?",
+      ok_title = "Create"
+    )
 
   def _direct_match(self):
     direct_match = self.context.from_settings("switch_code_test_immediately_on_direct_match")
