@@ -1,0 +1,11 @@
+TestRSpec:
+
+Improvements
+=====
+
+* allow defining rspec command to run. Zeus support.
+
+Notes
+=====
+
+Please restart Sublime in case you encounter any issues
