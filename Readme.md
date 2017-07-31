@@ -106,6 +106,18 @@ Creates spec file when launched in source file.
 
 Uses code snippet defined in settings.
 
+### Ignore binding.pry in the spec run
+
+You add `binding.pry` to the code, then run the rspec and process stucks on pry debugger.
+
+You can disable the debugger modifying the rspec command environment:
+
+```json
+  "rspec_add_to_path": "DISABLE_PRY=true",
+```
+
+Thanks [@werdlerk](https://github.com/werdlerk) for the tip!
+
 ## Troubleshooting
 
 ### Ruby not found
