@@ -12,6 +12,7 @@ class ExecuteSpec(object):
     self._validate_can_run_spec()
     self._prepare_output_panel()
     self._execute(self._command_hash())
+    self.context.window().focus_view(self.context.window().find_output_panel("exec"))
 
   def last_run(self):
     self._execute(LastRun.command_hash())
