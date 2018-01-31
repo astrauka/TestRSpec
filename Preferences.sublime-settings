@@ -1,4 +1,5 @@
 {
+  "target": "exec",
   // spec output panel settings
   "panel_settings": {
     "encoding": "utf-8",

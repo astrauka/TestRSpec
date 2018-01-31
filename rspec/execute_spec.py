@@ -29,7 +29,7 @@ class ExecuteSpec(object):
   def _execute(self, command_hash):
     self._before_execute()
     self.context.log("Executing {0}\n".format(command_hash.get("shell_cmd")))
-    self.context.window().run_command("exec", command_hash)
+    self.context.window().run_command(self.context.from_settings("target"), command_hash)
     LastRun.save(command_hash)
 
   def _before_execute(self):
