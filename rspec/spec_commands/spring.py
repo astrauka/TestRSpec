@@ -12,5 +12,4 @@ class Spring(object):
     gemfile_path = self.context.gemfile_path()
     if not gemfile_path: return
 
-    return open(gemfile_path, 'r').read().find('spring') > 0
-
+    return open(gemfile_path, "r").read().find("spring-commands-rspec") > 0

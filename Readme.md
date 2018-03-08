@@ -89,7 +89,7 @@ Command generation
 #         bundle exec
 #
 #       Spring on configuration
-#         check if Gemfile contains spring
+#         check if Gemfile contains spring-commands-rspec
 #         spring
 ```
 
@@ -132,6 +132,16 @@ Update package settings with path to ruby, for `rbenv` that's:
 
 ```json
   "rspec_add_to_path": "$HOME/.rbenv/shims",
+```
+
+### Spring is not used
+
+Make sure you have both `spring` and `spring-commands-rspec` in your Gemfile.
+
+If you use binstubs, you also need to run
+
+```bash
+bundle exec spring binstub rspec
 ```
 
 ## Acknowledgments
