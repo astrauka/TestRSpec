@@ -57,7 +57,7 @@ class ExecuteSpec(object):
     add_to_path = self.context.from_settings("rspec_add_to_path", "")
     append_path = "export PATH={0}:$PATH;".format(add_to_path) if add_to_path else ""
 
-    command = "({append_path} cd {project_root} && {rspec_command} {target})".format(
+    command = "({append_path} cd '{project_root}' && {rspec_command} {target})".format(
       append_path = append_path,
       project_root = self.context.project_root(),
       rspec_command = SpecCommand(self.context).result(),
