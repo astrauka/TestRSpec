@@ -1,3 +1,4 @@
+from shlex import quote
 from plugin_helpers.utils import memoize
 from rspec.output import Output
 from rspec.spec_command import SpecCommand
@@ -59,9 +60,9 @@ class ExecuteSpec(object):
 
     command = "({append_path} cd {project_root} && {rspec_command} {target})".format(
       append_path = append_path,
-      project_root = self.context.project_root(),
+      project_root = quote(self.context.project_root()),
       rspec_command = SpecCommand(self.context).result(),
-      target = self.context.spec_target()
+      target = quote(self.context.spec_target())
     )
     pannel_settings = self.context.from_settings("panel_settings", {})
     env = self.context.from_settings("env", {})
