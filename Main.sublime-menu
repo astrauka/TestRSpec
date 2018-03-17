@@ -45,26 +45,23 @@
             "id": "sublime-rspec",
             "children": [
               {
-                  "command": "open_file",
-                  "args": {"file": "${packages}/TestRSpec/Preferences.sublime-settings"},
-                  "caption": "Settings – Default"
+                "caption": "Settings",
+                "command": "edit_settings",
+                "args": {
+                  "base_file": "${packages}/TestRSpec/Preferences.sublime-settings",
+                  "user_file": "${packages}/User/TestRSpec.sublime-settings",
+                  "default": ""
+                }
               },
               {
-                  "command": "open_file",
-                  "args": {"file": "${packages}/User/TestRSpec.sublime-settings"},
-                  "caption": "Settings – User"
-              },
-              { "caption": "-" },
-              {
-                  "command": "open_file",
-                  "args": {"file": "${packages}/TestRSpec/Default.sublime-keymap"},
-                  "caption": "Key Bindings – Default"
-              },
-              {
-                  "command": "open_file",
-                  "args": {"file": "${packages}/User/Default (${platform}).sublime-keymap"},
-                  "caption": "Key Bindings – User"
-              },
+                "caption": "Key Bindings",
+                "command": "edit_settings",
+                "args": {
+                  "base_file": "${packages}/TestRSpec/Default.sublime-keymap",
+                  "user_file": "${packages}/User/Default (${platform}).sublime-keymap",
+                  "default": ""
+                }
+              }
             ]
           }
         ]
