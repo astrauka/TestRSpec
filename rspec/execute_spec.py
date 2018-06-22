@@ -1,4 +1,4 @@
-from shlex import quote
+from plugin_helpers.utils import quote
 from plugin_helpers.utils import memoize
 from rspec.output import Output
 from rspec.spec_command import SpecCommand
