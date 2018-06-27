@@ -60,5 +60,5 @@ def quote(s):
 
 def _quote_windows_string(s):
   if not s:
-    return "\"\""
-  return "\""+s.replace("\"", "\\\"")+"\""
+    return '""'
+  return '"' + s.replace('"', '\\"') + '"'
