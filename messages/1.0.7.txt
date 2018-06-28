@@ -1,0 +1,11 @@
+TestRSpec:
+
+Improvements
+=====
+
+* [Fix space in path issues on windows](https://github.com/astrauka/TestRSpec/pull/37)
+
+Notes
+=====
+
+Please restart Sublime in case you encounter any issues
