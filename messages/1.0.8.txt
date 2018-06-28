@@ -3,7 +3,7 @@ TestRSpec:
 Improvements
 =====
 
-* Add "target" option
+* Improve spring detection, support spaces in paths
 
 Notes
 =====
