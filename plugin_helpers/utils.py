@@ -1,5 +1,8 @@
 # from http://code.activestate.com/recipes/577452-a-memoize-decorator-for-instance-methods/
 
+import platform
+import shlex
+
 from functools import partial
 
 class memoize(object):
@@ -48,3 +51,14 @@ def unique(seq):
 def rreplace(s, old, new, occurrence):
   li = s.rsplit(old, occurrence)
   return new.join(li)
+
+def quote(s):
+  if "windows" in platform.system().lower():
+    return _quote_windows_string(s)
+  else:
+    return shlex.quote(s)
+
+def _quote_windows_string(s):
+  if not s:
+    return '""'
+  return '"' + s.replace('"', '\\"') + '"'
