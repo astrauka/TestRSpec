@@ -106,17 +106,20 @@ Creates spec file when launched in source file.
 
 Uses code snippet defined in settings.
 
-### Ignore binding.pry in the spec run
+### Ignore binding.pry when running specs
 
-You add `binding.pry` to the code, then run the rspec and process stucks on pry debugger.
+Sublime does not allow input in the output panel, so if you add `binding.pry`, tests get stuck
+waiting on input.
 
-You can disable the debugger modifying the rspec command environment:
+To work around this, you can disable the debugger by modifying TestRSpec configuration:
 
 ```json
-  "rspec_add_to_path": "DISABLE_PRY=true",
+  "env": {
+    "DISABLE_PRY": "true"
+  },
 ```
 
-Thanks [@werdlerk](https://github.com/werdlerk) for the tip!
+Alternatively, use [pry-remote](https://github.com/Mon-Ouie/pry-remote).
 
 ## Troubleshooting
 
