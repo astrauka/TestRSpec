@@ -121,6 +121,10 @@ To work around this, you can disable the debugger by modifying TestRSpec configu
 
 Alternatively, use [pry-remote](https://github.com/Mon-Ouie/pry-remote).
 
+### Hide inline errors
+
+By default inline error messages will be displayed whenever a spec fails. To disable them set `show_errors_inline` global setting to false.
+
 ## Troubleshooting
 
 ### Ruby not found
