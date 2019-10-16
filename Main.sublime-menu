@@ -19,6 +19,10 @@
             "command": "run_last_spec"
           },
           {
+            "caption": "Copy last command",
+            "command": "copy_last"
+          },
+          {
             "caption": "Display output panel",
             "command": "display_output_panel"
           },

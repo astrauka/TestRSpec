@@ -2,6 +2,7 @@
   { "caption": "TestRSpec: Test Current Line", "command": "test_current_line" },
   { "caption": "TestRSpec: Test Current File", "command": "test_current_file" },
   { "caption": "TestRSpec: Run last spec", "command": "run_last_spec" },
+  { "caption": "TestRSpec: Copy last command", "command": "copy_last" },
   { "caption": "TestRSpec: Display output panel", "command": "display_output_panel" },
   { "caption": "TestRSpec: Switch between code and test", "command": "switch_between_code_and_test" },
   { "caption": "TestRSpec: Create spec file", "command": "create_spec_file" },

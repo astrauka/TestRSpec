@@ -93,6 +93,11 @@ Command generation
 #         spring
 ```
 
+### Copy last ran rspec command
+
+Copies the command of the last run spec.
+It can be useful e.g. when you want to debug your application within a 'real' terminal.
+
 ### Switch between code and test
 
 Returns all matches by file name.

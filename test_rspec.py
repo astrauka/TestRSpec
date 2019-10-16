@@ -41,6 +41,7 @@ from rspec.rspec_print import rspec_print
 from rspec.execute_spec import ExecuteSpec
 from rspec.task_context import TaskContext
 from rspec.switch_between_code_and_test import SwitchBetweenCodeAndTest
+from rspec.last_copy import LastCopy
 from rspec.create_spec_file import CreateSpecFile
 
 class TestCurrentLineCommand(sublime_plugin.TextCommand):
@@ -60,6 +61,11 @@ class RunLastSpecCommand(sublime_plugin.TextCommand):
     rspec_print("Running last rspec command")
     context = TaskContext(self, edit)
     ExecuteSpec(context).last_run()
+
+class CopyLastCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    rspec_print("Running copy last rspec command")
+    LastCopy.run()
 
 class DisplayOutputPanelCommand(sublime_plugin.TextCommand):
   def run(self, edit):
