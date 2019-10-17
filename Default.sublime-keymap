@@ -28,6 +28,9 @@
   // run last spec
   { "keys": ["super+shift+e"], "command": "run_last_spec" },
 
+  // copy last command
+  { "keys": ["super+shift+,"], "command": "copy_last" },
+
   // display output panel
   { "keys": ["super+shift+x"], "command": "display_output_panel" },
 
