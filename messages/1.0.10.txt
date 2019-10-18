@@ -1,0 +1,7 @@
+TestRSpec:
+
+New features
+============
+
+* Press cmd+shift+, or super+shift+, to copy the last RSpec command into clipboard so you can
+  run the command in your terminal.
