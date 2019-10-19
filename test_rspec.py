@@ -1,9 +1,8 @@
-import sys, os.path, sublime, sublime_plugin
+import os
+import sys
+import sublime_plugin
 
-BASE_PATH = os.path.abspath(os.path.dirname(__file__))
-CODE_DIRS = ["plugin_helpers", "rspec"]
-sys.path += [BASE_PATH] + [os.path.join(BASE_PATH, f) for f in CODE_DIRS]
-
+sys.path += [os.path.abspath(os.path.dirname(__file__))]
 
 from rspec.rspec_print import rspec_print
 from rspec.execute_spec import ExecuteSpec

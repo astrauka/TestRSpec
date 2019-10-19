@@ -1,5 +1,6 @@
-from plugin_helpers.utils import rreplace
 import os
+
+from plugin_helpers.utils import rreplace
 
 
 class OppositeFile(object):

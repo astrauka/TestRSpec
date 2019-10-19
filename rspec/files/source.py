@@ -1,6 +1,7 @@
+import os
+
 from plugin_helpers.utils import memoize
 from rspec.files.opposite import OppositeFile
-import os
 
 
 class SourceFile(object):

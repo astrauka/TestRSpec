@@ -1,13 +1,12 @@
+import sublime
+
 from plugin_helpers.utils import memoize, unique
 from plugin_helpers.open_file import OpenFile
-from rspec.output import Output
 from rspec.files.opposite import OppositeFile
 from rspec.files.spec import SpecFile
 from rspec.files.source import SourceFile
 from rspec.rspec_print import rspec_print
-from create_spec_file import CreateSpecFile
-import os
-import sublime
+from rspec.create_spec_file import CreateSpecFile
 
 
 class SwitchBetweenCodeAndTest(object):
