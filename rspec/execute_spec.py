@@ -70,7 +70,7 @@ class ExecuteSpec(object):
             rspec_command=SpecCommand(self.context).result(),
             target=quote(self.context.spec_target()),
         )
-        pannel_settings = self.context.from_settings("panel_settings", {})
+        panel_settings = self.context.from_settings("panel_settings", {})
         env = self.context.from_settings("env", {})
 
         return {
@@ -78,6 +78,6 @@ class ExecuteSpec(object):
             "working_dir": self.context.project_root(),
             "env": env,
             "file_regex": r"([^ ]*\.rb):?(\d*)",
-            "syntax": pannel_settings.get("syntax"),
-            "encoding": pannel_settings.get("encoding", "utf-8"),
+            "syntax": panel_settings.get("syntax"),
+            "encoding": panel_settings.get("encoding", "utf-8"),
         }
