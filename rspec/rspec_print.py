@@ -1,2 +1,2 @@
 def rspec_print(*args):
-  print("TestRSpec:", *args)
+    print("TestRSpec:", *args)
