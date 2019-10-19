@@ -1,12 +1,13 @@
+import os
+import sublime
+
 from plugin_helpers.utils import memoize
 from plugin_helpers.project_files import ProjectFiles
 from rspec.project_root import ProjectRoot
 from rspec.output import Output
-import sublime, os
 
 
 class TaskContext(object):
-    PACKAGE_NAME = "TestRSpec"
     GEMFILE_NAME = "Gemfile"
     SPEC_FILE_POSTFIX = "_spec.rb"
 
