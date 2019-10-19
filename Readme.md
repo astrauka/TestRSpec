@@ -177,7 +177,6 @@ Help is always welcome. Create an issue if you need help.
 * [Forum](https://forum.sublimetext.com/c/technical-support)
 * [Documentation](https://www.sublimetext.com/docs/3/)
 * [Api reference](https://www.sublimetext.com/docs/3/api_reference.html)
-* [Auto reloading](https://forum.sublimetext.com/t/auto-reloading-of-python-module-files-used-by-plugin/5321/7)
 * [Extract package](https://github.com/skuroda/PackageResourceViewer) -
 to extract default package and understand plugin development basics
 * [Package settings](https://www.sublimetext.com/docs/3/packages.html)
