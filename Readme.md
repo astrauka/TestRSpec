@@ -21,7 +21,7 @@ Manually:
 ## Configuration
 
 TestRSpec tries its best to autodetect how to run RSpec. However, you might need to make adjustments to plugin's
-configuration if you have an uncommon setup. 
+configuration if you have an uncommon setup.
 
 Find settings in Preferences -> Package Settings -> TestRSpec.
 
@@ -39,19 +39,19 @@ Find key bindings in Preferences -> Package Settings -> TestRSpec.
 
 Launch RSpec for:
 
-* Current file (`super+shift+t` or `cmd+shift+t`)
-* Current line (`super+shift+r` or `cmd+shift+r`)
-* Rerun last run spec (`super+shift+e` or `cmd+shift+e`)
+* Current file (Super+Shift+T)
+* Current line (Super+Shift+R)
+* Rerun last run spec (Super+Shift+E)
 
 ### Switch between code and spec
 
-Key binding: `super+.` or `cmd+.`
+Key binding: Super+.
 
 Jumps from code to spec and vice versa. If there multiple matches, it shows a list with matches.
 
 ### Create a spec file
 
-Key binding: `super+shift+c` or `cmd+shift+c`
+Key binding: Super+Shift+C
 
 Creates a spec file when run in a source file.
 
@@ -59,7 +59,7 @@ Uses code snippet defined in settings (`create_spec_snippet`).
 
 ### Copy last ran RSpec command
 
-Key binding: `super+shift+,` or `cmd+shift+,`
+Key binding: Super+Shift+,
 
 Copies the command of the last run spec.
 It can be useful e.g. when you want to debug your application within a 'real' terminal.
