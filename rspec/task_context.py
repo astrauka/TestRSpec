@@ -9,7 +9,6 @@ from rspec.output import Output
 
 class TaskContext(object):
     GEMFILE_NAME = "Gemfile"
-    SPEC_FILE_POSTFIX = "_spec.rb"
 
     def __init__(self, sublime_command, edit, spec_target_is_file=False):
         self.sublime_command = sublime_command
@@ -31,6 +30,10 @@ class TaskContext(object):
     @memoize
     def file_relative_name(self):
         return os.path.relpath(self.file_name(), self.project_root())
+
+    @memoize
+    def spec_file_extension(self):
+        return self.from_settings("spec_file_extension")
 
     # from https://github.com/theskyliner/CopyFilepathWithLineNumbers/blob/master/CopyFilepathWithLineNumbers.py
     @memoize
@@ -96,7 +99,7 @@ class TaskContext(object):
         )
 
     def is_test_file(self):
-        return self.file_name().endswith(TaskContext.SPEC_FILE_POSTFIX)
+        return self.file_name().endswith(self.spec_file_extension())
 
     @memoize
     def which_rspec(self):
