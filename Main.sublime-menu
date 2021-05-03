@@ -52,9 +52,9 @@
                 "caption": "Settings",
                 "command": "edit_settings",
                 "args": {
-                  "base_file": "${packages}/TestRSpec/Preferences.sublime-settings",
+                  "base_file": "${packages}/TestRSpec/TestRSpec.sublime-settings",
                   "user_file": "${packages}/User/TestRSpec.sublime-settings",
-                  "default": ""
+                  "default": "// User overrides go here\n{\n\t$0\n}\n"
                 }
               },
               {

@@ -76,24 +76,11 @@ class TaskContext(object):
         self.output_buffer().show_panel()
 
     @memoize
-    def _plugin_settings(self):
-        return sublime.load_settings("Preferences.sublime-settings")
-
-    @memoize
-    def _user_settings(self):
+    def _settings(self):
         return sublime.load_settings("TestRSpec.sublime-settings")
 
-    @memoize
-    def _view_settings(self):
-        return self.view().settings()
-
     def from_settings(self, key, default_value=None):
-        return self._user_settings().get(
-            key,
-            self._view_settings().get(
-                key, self._plugin_settings().get(key, default_value)
-            ),
-        )
+        return self._settings().get(key, default_value)
 
     def is_test_file(self):
         return self.file_name().endswith(TaskContext.SPEC_FILE_POSTFIX)
