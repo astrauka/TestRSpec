@@ -1,7 +1,7 @@
 import os
 
-from rspec.files.opposite import OppositeFile
-from plugin_helpers.utils import memoize
+from .opposite import OppositeFile
+from ...plugin_helpers.utils import memoize
 
 
 class SpecFile(object):

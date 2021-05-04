@@ -1,7 +1,7 @@
 import sublime
 
-from rspec.last_run import LastRun
-from rspec.rspec_print import rspec_print
+from .last_run import LastRun
+from .rspec_print import rspec_print
 
 
 class LastCopy(object):

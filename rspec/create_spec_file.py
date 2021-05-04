@@ -2,9 +2,9 @@ import os
 import re
 import sublime
 
-from plugin_helpers.utils import memoize
-from plugin_helpers.open_file import OpenFile
-from rspec.files.opposite import OppositeFile
+from ..plugin_helpers.utils import memoize
+from ..plugin_helpers.open_file import OpenFile
+from .files.opposite import OppositeFile
 
 
 class CreateSpecFile(object):

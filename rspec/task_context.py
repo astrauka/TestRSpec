@@ -1,10 +1,10 @@
 import os
 import sublime
 
-from plugin_helpers.utils import memoize
-from plugin_helpers.project_files import ProjectFiles
-from rspec.project_root import ProjectRoot
-from rspec.output import Output
+from ..plugin_helpers.utils import memoize
+from ..plugin_helpers.project_files import ProjectFiles
+from .project_root import ProjectRoot
+from .output import Output
 
 
 class TaskContext(object):

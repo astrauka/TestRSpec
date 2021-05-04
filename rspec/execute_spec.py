@@ -1,9 +1,9 @@
-from plugin_helpers.utils import quote
-from plugin_helpers.utils import memoize
-from rspec.output import Output
-from rspec.spec_command import SpecCommand
-from rspec.last_run import LastRun
-from rspec.files.save import SaveFiles
+from ..plugin_helpers.utils import quote
+from ..plugin_helpers.utils import memoize
+from .output import Output
+from .spec_command import SpecCommand
+from .last_run import LastRun
+from .files.save import SaveFiles
 
 
 class ExecuteSpec(object):

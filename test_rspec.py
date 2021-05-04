@@ -1,15 +1,11 @@
-import os
-import sys
 import sublime_plugin
 
-sys.path += [os.path.abspath(os.path.dirname(__file__))]
-
-from rspec.rspec_print import rspec_print
-from rspec.execute_spec import ExecuteSpec
-from rspec.task_context import TaskContext
-from rspec.switch_between_code_and_test import SwitchBetweenCodeAndTest
-from rspec.last_copy import LastCopy
-from rspec.create_spec_file import CreateSpecFile
+from .rspec.rspec_print import rspec_print
+from .rspec.execute_spec import ExecuteSpec
+from .rspec.task_context import TaskContext
+from .rspec.switch_between_code_and_test import SwitchBetweenCodeAndTest
+from .rspec.last_copy import LastCopy
+from .rspec.create_spec_file import CreateSpecFile
 
 
 class TestCurrentLineCommand(sublime_plugin.TextCommand):

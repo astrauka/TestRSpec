@@ -1,8 +1,8 @@
-from rspec.spec_commands.bundle import Bundle
-from rspec.spec_commands.spring import Spring
-from rspec.spec_commands.rbenv import Rbenv
-from rspec.spec_commands.rvm import Rvm
-from rspec.spec_commands.system_ruby import SystemRuby
+from .bundle import Bundle
+from .spring import Spring
+from .rbenv import Rbenv
+from .rvm import Rvm
+from .system_ruby import SystemRuby
 
 
 class RubyRspec(object):

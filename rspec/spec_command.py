@@ -1,5 +1,5 @@
-from rspec.spec_commands.bin_rspec import BinRspec
-from rspec.spec_commands.ruby_rspec import RubyRspec
+from .spec_commands.bin_rspec import BinRspec
+from .spec_commands.ruby_rspec import RubyRspec
 
 
 class SpecCommand(object):
