@@ -11,7 +11,9 @@ class ExecuteSpec(object):
         self.context = context
 
     def current(self):
-        self._validate_can_run_spec()
+        if not self._validate_can_run_spec():
+            return
+
         self._prepare_output_panel()
         self._execute(self._command_hash())
 
@@ -20,9 +22,14 @@ class ExecuteSpec(object):
 
     def _validate_can_run_spec(self):
         if not self.context.project_root():
-            return self._notify_missing_project_root()
+            self._notify_missing_project_root()
+            return False
+
         if not self.context.is_test_file():
-            return self._notify_not_test_file()
+            self._notify_not_test_file()
+            return False
+
+        return True
 
     def _prepare_output_panel(self):
         self.context.log("Error occurred, see more in 'View -> Show Console'")
@@ -52,7 +59,7 @@ class ExecuteSpec(object):
 
     def _notify_not_test_file(self):
         self.context.log(
-            "Trying to test not a test file: {0}".format(self.context.file_name()),
+            "Not an RSpec file: {0}".format(self.context.file_name()),
             level=Output.Levels.ERROR,
         )
         self.context.display_output_panel()
