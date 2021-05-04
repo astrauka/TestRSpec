@@ -71,11 +71,13 @@ class ExecuteSpec(object):
             "export PATH={0}:$PATH;".format(add_to_path) if add_to_path else ""
         )
 
-        command = "({append_path} cd {project_root} && {rspec_command} {target})".format(
-            append_path=append_path,
-            project_root=quote(self.context.project_root()),
-            rspec_command=SpecCommand(self.context).result(),
-            target=quote(self.context.spec_target()),
+        command = (
+            "({append_path} cd {project_root} && {rspec_command} {target})".format(
+                append_path=append_path,
+                project_root=quote(self.context.project_root()),
+                rspec_command=SpecCommand(self.context).result(),
+                target=quote(self.context.spec_target()),
+            )
         )
         panel_settings = self.context.from_settings("panel_settings", {})
         env = self.context.from_settings("env", {})
