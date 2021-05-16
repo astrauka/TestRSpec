@@ -5,6 +5,8 @@
     "encoding": "utf-8",
     "syntax": "Packages/TestRSpec/themes/TestConsole.tmLanguage",
     "color_scheme": "Packages/TestRSpec/themes/TestConsole.hidden-tmTheme",
+    "scroll_past_end": false,
+    "line_numbers": false,
   },
   // rspec command
   "rspec_command": "rspec",
