@@ -11,12 +11,14 @@ Run, navigate and create specs from Sublime Text.
 Using [Package Control](http://wbond.net/sublime_packages/package_control):
 
 1. Run “Package Control: Install Package” command, find and install `TestRspec`.
-2. Restart Sublime Text.
+2. Define key bindings (see Configuration section below).
+3. Restart Sublime Text.
 
 Manually:
 
 1. Clone this repository into your packages folder (in Sublime Text: Preferences -> Browse Packages).
-2. Restart Sublime Text.
+2. Define key bindings (see Configuration section below).
+3. Restart Sublime Text.
 
 ## Configuration
 
