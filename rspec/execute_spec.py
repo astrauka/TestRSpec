@@ -86,7 +86,7 @@ class ExecuteSpec(object):
             "shell_cmd": command,
             "working_dir": self.context.project_root(),
             "env": env,
-            "file_regex": r"([^ ]*\.rb):?(\d*)",
+            "file_regex": r"^rspec ([^ ]*\.rb):(\d+)() # (.+)$",
             "syntax": panel_settings.get("syntax"),
             "encoding": panel_settings.get("encoding", "utf-8"),
         }

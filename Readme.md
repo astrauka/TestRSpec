@@ -58,11 +58,6 @@ It can be useful e.g. when you want to debug your application within a 'real' te
 
 ## Tips
 
-### Hide inline errors
-
-By default, inline error messages will be displayed whenever a spec fails. Set `show_errors_inline` to false in global
-settings to prevent this.
-
 ### Ignore binding.pry when running specs
 
 Sublime does not allow input in the output panel, so if you add `binding.pry`, tests get stuck

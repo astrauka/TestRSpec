@@ -11,11 +11,6 @@ Package Settings -> TestRSpec -> Key Bindings to define key bindings.
 
 Documentation: https://github.com/astrauka/TestRSpec
 
-Suggested Settings
-==================
-
-Set `show_errors_inline` to `false` in your global settings.
-
 Having an Issue?
 ================
 
