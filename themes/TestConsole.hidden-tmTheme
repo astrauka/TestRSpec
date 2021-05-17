@@ -38,17 +38,6 @@
       <key>name</key>
       <string>Test</string>
       <key>scope</key>
-      <string>test.error</string>
-      <key>settings</key>
-      <dict>
-        <key>foreground</key>
-        <string>#FF0000</string>
-      </dict>
-    </dict>
-    <dict>
-      <key>name</key>
-      <string>Test</string>
-      <key>scope</key>
       <string>test.fail</string>
       <key>settings</key>
       <dict>
@@ -113,6 +102,6 @@
     </dict>
   </array>
   <key>uuid</key>
-  <string>72174d10-bb12-11e0-962b-112233445577</string>
+  <string>ca69fd5f-3530-4d35-91b4-0a04ea8539cf</string>
 </dict>
 </plist>
