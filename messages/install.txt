@@ -3,29 +3,13 @@ Quick Start
 
 TestRSpec allows you to run RSpec from within Sublime Text.
 
-TestRSpec tries its best to autodetect how to run RSpec. However, you might need to make
-adjustments to plugin's configuration if you have an uncommon setup.
+TestRSpec tries its best to autodetect how to run RSpec. However, you might need
+to make adjustments to plugin's configuration if you have an uncommon setup.
+
+There are no key bindings enabled by default. Go to Preferences ->
+Package Settings -> TestRSpec -> Key Bindings to define key bindings.
 
 Documentation: https://github.com/astrauka/TestRSpec
-
-Default Keybindings
-===================
-
-Launch RSpec for:
-
-- Current file:             Super+Shift+T
-- Current line:             Super+Shift+R
-- Rerun last run command:   Super+Shift+E
-
-Other commands:
-
-- Switch between code and spec:   Super+.
-- Create a spec:                  Super+Shift+C
-- Copy last run command:          Super+Shift+,
-- Close output panel:             Esc
-- Reveal output panel:            Super+Shift+X
-
-Super key is either Win or Cmd, depending on platform.
 
 Suggested Settings
 ==================

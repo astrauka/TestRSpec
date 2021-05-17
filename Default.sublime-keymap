@@ -1,51 +1,58 @@
 [
-  // test current line
-  {
-    "keys": ["super+shift+r"],
-    "command": "test_current_line",
-    "context": [
-      {
-        "key": "selector",
-        "operator": "equal",
-        "operand": "source.ruby, source.rspec"
-      }
-    ]
-  },
+  // This is the keymap used by TestRSpec by default before version 2.0.
+  //
+  // Some of these clash with the default Sublime key bindings, and are now
+  // disabled by default because of that.
 
-  // test current file
-  {
-    "keys": ["super+shift+t"],
-    "command": "test_current_file",
-    "context": [
-      {
-        "key": "selector",
-        "operator": "equal",
-        "operand": "source.ruby, source.rspec"
-      }
-    ]
-  },
 
-  // run last spec
-  { "keys": ["super+shift+e"], "command": "run_last_spec" },
 
-  // copy last command
-  { "keys": ["super+shift+,"], "command": "copy_last" },
+  // // test current line
+  // {
+  //   "keys": ["super+shift+r"],
+  //   "command": "test_current_line",
+  //   "context": [
+  //     {
+  //       "key": "selector",
+  //       "operator": "equal",
+  //       "operand": "source.ruby, source.rspec"
+  //     }
+  //   ]
+  // },
 
-  // display output panel
-  { "keys": ["super+shift+x"], "command": "display_output_panel" },
+  // // test current file
+  // {
+  //   "keys": ["super+shift+t"],
+  //   "command": "test_current_file",
+  //   "context": [
+  //     {
+  //       "key": "selector",
+  //       "operator": "equal",
+  //       "operand": "source.ruby, source.rspec"
+  //     }
+  //   ]
+  // },
 
-  // switch between code and test
-  {
-    "keys": ["super+period"],
-    "command": "switch_between_code_and_test",
-    "context": [
-      {
-        "key": "selector", "operator": "equal",
-        "operand": "source.ruby, source.rspec"
-      }
-    ]
-  },
+  // // run last spec
+  // { "keys": ["super+shift+e"], "command": "run_last_spec" },
 
-  // create spec file
-  { "keys": ["super+shift+c"], "command": "create_spec_file" },
+  // // copy last command
+  // { "keys": ["super+shift+,"], "command": "copy_last" },
+
+  // // display output panel
+  // { "keys": ["super+shift+x"], "command": "display_output_panel" },
+
+  // // switch between code and test
+  // {
+  //   "keys": ["super+period"],
+  //   "command": "switch_between_code_and_test",
+  //   "context": [
+  //     {
+  //       "key": "selector", "operator": "equal",
+  //       "operand": "source.ruby, source.rspec"
+  //     }
+  //   ]
+  // },
+
+  // // create spec file
+  // { "keys": ["super+shift+c"], "command": "create_spec_file" },
 ]

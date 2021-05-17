@@ -23,15 +23,11 @@ Manually:
 TestRSpec tries its best to autodetect how to run RSpec. However, you might need to make adjustments to plugin's
 configuration if you have an uncommon setup.
 
+There are no key bindings enabled by default. Go to Preferences -> Package Settings -> TestRSpec -> Key Bindings to define key bindings.
+
 Find settings in Preferences -> Package Settings -> TestRSpec.
 
 [Default settings](https://github.com/astrauka/TestRSpec/blob/master/Preferences.sublime-settings)
-
-## Key bindings
-
-Find key bindings in Preferences -> Package Settings -> TestRSpec.
-
-[Default bindings](https://github.com/astrauka/TestRSpec/blob/master/Default.sublime-keymap)
 
 ## Features
 
@@ -39,27 +35,21 @@ Find key bindings in Preferences -> Package Settings -> TestRSpec.
 
 Launch RSpec for:
 
-* Current file (Super+Shift+T)
-* Current line (Super+Shift+R)
-* Rerun last run spec (Super+Shift+E)
+* Current file
+* Current line
+* Rerun last run spec
 
 ### Switch between code and spec
-
-Key binding: Super+.
 
 Jumps from code to spec and vice versa. If there multiple matches, it shows a list with matches.
 
 ### Create a spec file
-
-Key binding: Super+Shift+C
 
 Creates a spec file when run in a source file.
 
 Uses code snippet defined in settings (`create_spec_snippet`).
 
 ### Copy last ran RSpec command
-
-Key binding: Super+Shift+,
 
 Copies the command of the last run spec.
 It can be useful e.g. when you want to debug your application within a 'real' terminal.
@@ -79,9 +69,11 @@ waiting on input.
 To work around this, you can disable the debugger by modifying TestRSpec configuration:
 
 ```json
+{
   "env": {
     "DISABLE_PRY": "true"
-  },
+  }
+}
 ```
 
 Alternatively, use [pry-remote](https://github.com/Mon-Ouie/pry-remote).
@@ -102,7 +94,9 @@ Make sure `ruby` command runs the right Ruby version in `bash`.
 Alternatively, update package settings with path to ruby, e.g.:
 
 ```json
-  "rspec_add_to_path": "$HOME/.rbenv/shims",
+{
+  "rspec_add_to_path": "$HOME/.rbenv/shims"
+}
 ```
 
 ### Spring is not used
