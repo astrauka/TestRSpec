@@ -117,18 +117,6 @@ Inspired by and uses code from https://github.com/maltize/sublime-text-2-ruby-te
 
 Help is always welcome. Create an issue if you need help.
 
-### Sublime Text plugin development links
-
-* [Create plugin](https://clarknikdelpowell.com/blog/creating-sublime-text-3-plugins-part-1/)
-* [Submit package](https://packagecontrol.io/docs/submitting_a_package)
-* [Forum](https://forum.sublimetext.com/c/technical-support)
-* [Documentation](https://www.sublimetext.com/docs/3/)
-* [Api reference](https://www.sublimetext.com/docs/3/api_reference.html)
-* [Extract package](https://github.com/skuroda/PackageResourceViewer) -
-to extract the default package and understand plugin development basics
-* [Package settings](https://www.sublimetext.com/docs/3/packages.html)
-* [Unofficial documentation](http://docs.sublimetext.info/en/latest/index.html)
-
 ## Copyright and license
 
 Copyright © 2016 [@astrauka](http://twitter.com/astrauka)
