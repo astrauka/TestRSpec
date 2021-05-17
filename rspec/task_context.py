@@ -86,10 +86,6 @@ class TaskContext(object):
         return self.file_name().endswith(TaskContext.SPEC_FILE_POSTFIX)
 
     @memoize
-    def which_rspec(self):
-        return os.popen("which rspec").read().split("\n")[0]
-
-    @memoize
     def gemfile_path(self):
         path = os.path.join(self.project_root(), TaskContext.GEMFILE_NAME)
         if not os.path.isfile(path):
