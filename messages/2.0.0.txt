@@ -1,0 +1,23 @@
+⚠️ Please restart Sublime Text.
+
+Changes:
+
+* ⚠️ BREAKING CHANGE: TestRSpec 2.0 no longer ships with default key bindings.
+
+To keep the old key bindings, go to Preferences -> Package Settings ->
+TestRSpec -> Key Bindings, then copy the parts you need to your key binding
+configuration file.
+
+* Use the default color scheme for RSpec output panel. If you use a light
+theme, you'll notice the output is now light as well.
+
+You might need to reset `panel_settings` override in TestRSpec settings if
+you've changed those.
+
+* Improve failed spec detection in output panel. If you've previously set
+`show_errors_inline` to false in your settings because of this plugin, you
+might want to reenable it.
+
+* Refuse to run files that are not specs or when spec folder cannot be found.
+
+* Make the plugin compatible with future automatic upgrades.
