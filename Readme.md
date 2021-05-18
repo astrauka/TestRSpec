@@ -121,6 +121,6 @@ Help is always welcome. Create an issue if you need help.
 
 ## Copyright and license
 
-Copyright © 2016 [@astrauka](http://twitter.com/astrauka)
+Copyright © 2016 [@astrauka](https://twitter.com/astrauka)
 
-Licensed under the [**MIT**](http://miro.mit-license.org) license.
+Licensed under the [**MIT**](https://mit-license.org/) license.
