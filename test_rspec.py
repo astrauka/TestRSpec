@@ -20,6 +20,7 @@ from .rspec.task_context import TaskContext
 from .rspec.switch_between_code_and_test import SwitchBetweenCodeAndTest
 from .rspec.last_copy import LastCopy
 from .rspec.create_spec_file import CreateSpecFile
+from .rspec.output import Output
 
 
 class TestCurrentLineCommand(sublime_plugin.TextCommand):
@@ -68,3 +69,9 @@ class CreateSpecFileCommand(sublime_plugin.TextCommand):
         rspec_print("Creating spec file")
         context = TaskContext(self, edit)
         CreateSpecFile(context).run()
+
+
+def plugin_unloaded():
+    # Destroy output panels because the default syntax is going to disappear.
+    # This prevents error messages on plugin upgrade.
+    Output.destroy()
