@@ -2,7 +2,7 @@ import os
 from ...plugin_helpers.utils import memoize
 
 
-class SystemRuby(object):
+class SystemRuby:
     def __init__(self, context):
         self.context = context
 

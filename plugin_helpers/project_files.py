@@ -1,7 +1,7 @@
 import os
 
 
-class ProjectFiles(object):
+class ProjectFiles:
     def __init__(self, project_root, file_matcher, ignored_directories):
         self.project_root = project_root
         self.file_matcher = file_matcher

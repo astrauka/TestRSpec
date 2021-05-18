@@ -1,7 +1,7 @@
 import sublime
 
 
-class LastRun(object):
+class LastRun:
     SETTINGS_FILE = "TestRSpec.last-run"
 
     @classmethod

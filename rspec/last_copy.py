@@ -4,7 +4,7 @@ from .last_run import LastRun
 from .rspec_print import rspec_print
 
 
-class LastCopy(object):
+class LastCopy:
     @classmethod
     def run(klass):
         command = LastRun.command_hash().get("shell_cmd")

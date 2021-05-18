@@ -4,7 +4,7 @@ from ...plugin_helpers.utils import memoize
 from .opposite import OppositeFile
 
 
-class SourceFile(object):
+class SourceFile:
     def __init__(self, context, append_directory):
         self.context = context
         self.append_directory = append_directory

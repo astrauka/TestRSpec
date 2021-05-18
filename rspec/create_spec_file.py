@@ -7,7 +7,7 @@ from ..plugin_helpers.open_file import OpenFile
 from .files.opposite import OppositeFile
 
 
-class CreateSpecFile(object):
+class CreateSpecFile:
     CLASS_DESCRIPTOR = "class"
 
     def __init__(self, context):

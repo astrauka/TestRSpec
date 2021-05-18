@@ -2,7 +2,7 @@ import functools
 import sublime
 
 
-class OpenFile(object):
+class OpenFile:
     def __init__(self, window, files):
         self.window = window
         self.files = files if isinstance(files, list) else [files]

@@ -9,7 +9,7 @@ from .rspec_print import rspec_print
 from .create_spec_file import CreateSpecFile
 
 
-class SwitchBetweenCodeAndTest(object):
+class SwitchBetweenCodeAndTest:
     def __init__(self, context):
         self.context = context
 

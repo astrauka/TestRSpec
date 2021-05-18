@@ -7,7 +7,7 @@ from .project_root import ProjectRoot
 from .output import Output
 
 
-class TaskContext(object):
+class TaskContext:
     GEMFILE_NAME = "Gemfile"
     SPEC_FILE_POSTFIX = "_spec.rb"
 

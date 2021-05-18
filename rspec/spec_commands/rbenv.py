@@ -2,7 +2,7 @@ import os
 from ...plugin_helpers.utils import memoize
 
 
-class Rbenv(object):
+class Rbenv:
     def __init__(self, context):
         self.context = context
 

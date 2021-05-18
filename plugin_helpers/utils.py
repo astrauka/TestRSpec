@@ -6,7 +6,7 @@ import shlex
 from functools import partial
 
 
-class memoize(object):
+class memoize:
     """cache the return value of a method
 
     This class is meant to be used as a decorator of methods. The return value
@@ -16,7 +16,7 @@ class memoize(object):
 
     If a memoized method is invoked directly on its class the result will not
     be cached. Instead the method will be invoked like a static method:
-    class Obj(object):
+    class Obj:
         @memoize
         def add_to(self, arg):
             return self + arg

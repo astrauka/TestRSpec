@@ -2,7 +2,7 @@ import os
 from ...plugin_helpers.utils import memoize
 
 
-class BinRspec(object):
+class BinRspec:
     def __init__(self, context):
         self.context = context
 

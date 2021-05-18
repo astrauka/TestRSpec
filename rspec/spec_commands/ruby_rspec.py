@@ -5,7 +5,7 @@ from .rvm import Rvm
 from .system_ruby import SystemRuby
 
 
-class RubyRspec(object):
+class RubyRspec:
     def __init__(self, context):
         self.context = context
 

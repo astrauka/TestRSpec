@@ -3,7 +3,7 @@ import os
 from ...plugin_helpers.utils import rreplace
 
 
-class OppositeFile(object):
+class OppositeFile:
     def __init__(self, context):
         self.context = context
 

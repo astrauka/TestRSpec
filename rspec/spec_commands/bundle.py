@@ -1,7 +1,7 @@
 import os
 
 
-class Bundle(object):
+class Bundle:
     def __init__(self, context):
         self.context = context
 

@@ -4,7 +4,7 @@ from .opposite import OppositeFile
 from ...plugin_helpers.utils import memoize
 
 
-class SpecFile(object):
+class SpecFile:
     def __init__(self, context, ignored_directory):
         self.context = context
         self.ignored_directory = ignored_directory

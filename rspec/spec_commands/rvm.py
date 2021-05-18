@@ -2,7 +2,7 @@ import os
 from ...plugin_helpers.utils import memoize
 
 
-class Rvm(object):
+class Rvm:
     def __init__(self, context):
         self.context = context
 

@@ -1,7 +1,7 @@
 from ..plugin_helpers.utils import memoize
 
 
-class Output(object):
+class Output:
     class Levels:
         ERROR = "ERROR"
         WARNING = "WARNING"

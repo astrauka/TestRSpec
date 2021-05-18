@@ -1,7 +1,7 @@
 import os
 
 
-class ProjectRoot(object):
+class ProjectRoot:
     def __init__(self, file_name, spec_folder_name):
         self.file_name = file_name
         self.spec_folder_name = spec_folder_name

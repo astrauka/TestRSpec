@@ -2,7 +2,7 @@ from .spec_commands.bin_rspec import BinRspec
 from .spec_commands.ruby_rspec import RubyRspec
 
 
-class SpecCommand(object):
+class SpecCommand:
     def __init__(self, context):
         self.context = context
 

@@ -1,4 +1,4 @@
-class SaveFiles(object):
+class SaveFiles:
     def __init__(self, context):
         self.context = context
 

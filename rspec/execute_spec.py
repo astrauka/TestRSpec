@@ -6,7 +6,7 @@ from .last_run import LastRun
 from .files.save import SaveFiles
 
 
-class ExecuteSpec(object):
+class ExecuteSpec:
     def __init__(self, context):
         self.context = context
 

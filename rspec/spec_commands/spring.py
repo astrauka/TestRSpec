@@ -1,7 +1,7 @@
 import os
 
 
-class Spring(object):
+class Spring:
     def __init__(self, context):
         self.context = context
 
