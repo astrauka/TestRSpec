@@ -3,8 +3,7 @@
   // spec output panel settings
   "panel_settings": {
     "encoding": "utf-8",
-    "syntax": "Packages/TestRSpec/themes/TestConsole.tmLanguage",
-    "color_scheme": "Packages/TestRSpec/themes/TestConsole.hidden-tmTheme",
+    "syntax": "Packages/TestRSpec/themes/RSpecConsole.sublime-syntax",
     "scroll_past_end": false,
     "word_wrap": true,
     "line_numbers": false,

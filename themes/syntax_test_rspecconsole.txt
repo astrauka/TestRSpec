@@ -1,0 +1,78 @@
+# SYNTAX TEST "Packages/TestRSpec/themes/RSpecConsole.sublime-syntax"
+
+.
+# <- markup.inserted.testrspec
+
+.....
+# <- markup.inserted.testrspec
+#^^^^ markup.inserted.testrspec
+
+Hello. World.
+#    ^ - markup.inserted.testrspec
+#           ^ - markup.inserted.testrspec
+
+Fail
+# <- - markup.deleted.testrspec
+
+F
+# <- markup.deleted.testrspec
+
+FFFFF
+# <- markup.deleted.testrspec
+#^^^^ markup.deleted.testrspec
+
+*
+# <- markup.changed.testrspec
+
+*****
+# <- markup.changed.testrspec
+#^^^^ markup.changed.testrspec
+
+.F.*.
+# <- markup.inserted.testrspec
+#^ markup.deleted.testrspec
+# ^ markup.inserted.testrspec
+#  ^ markup.changed.testrspec
+#   ^ markup.inserted.testrspec
+
+fF
+# <- - markup.deleted.testrspec
+#^ - markup.deleted.testrspec
+
+6 examples, 1 failure, 4 pending
+# <- markup.inserted.testrspec
+#^^^^^^^^^ markup.inserted.testrspec
+#           ^^^^^^^^^ markup.deleted.testrspec
+#                      ^^^^^^^^^ markup.changed.testrspec
+
+0 examples, 0 failures, 0 pending
+# <- markup.inserted.testrspec
+#^^^^^^^^^ markup.inserted.testrspec
+#           ^^^^^^^^^^ markup.inserted.testrspec
+#                       ^^^^^^^^^ markup.changed.testrspec
+
+5 failures
+# <- markup.deleted.testrspec
+#^^^^^^^^^ markup.deleted.testrspec
+
+ # comment
+#^^^^^^^^^ comment.line.placeholder.testrspec
+
+# comment
+# <- - comment.line.placeholder.testrspec
+#^^^^^^^^ - comment.line.placeholder.testrspec
+
+ 1) Class#method failed
+#        ^^^^^^^ - comment.line.placeholder.testrspec
+
+     Failure/Error: raise 'error'
+#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ markup.deleted.testrspec
+
+Failures:
+# <- markup.deleted.testrspec
+#^^^^^^^^ markup.deleted.testrspec
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+# <- markup.changed.testrspec
+#^^^^^^^ markup.changed.testrspec
+#       ^^^^^^ - markup.changed.testrspec

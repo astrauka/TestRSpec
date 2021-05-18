@@ -1,0 +1,36 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/syntax.html
+
+name: RSpecConsole
+hidden: true
+scope: tests.ruby
+
+contexts:
+  main:
+    - match: '^(?=[\.\*F]+$)'
+      push: results-line
+    - match: \b\d+ examples?|\b0 failures
+      scope: markup.inserted.testrspec
+    - match: \b\d+ failures?
+      scope: markup.deleted.testrspec
+    - match: \b\d+ pending
+      scope: markup.changed.testrspec
+    - match: '^(Failures|ERROR):'
+      scope: markup.deleted.testrspec
+    - match: '^(Pending|WARNING):'
+      scope: markup.changed.testrspec
+    - match: '^     Failure/Error: .+$'
+      scope: markup.deleted.testrspec
+    - match: \s#\s.+
+      scope: comment.line.placeholder.testrspec
+
+  results-line:
+    - match: $
+      pop: true
+    - match: \.+
+      scope: markup.inserted.testrspec
+    - match: \*+
+      scope: markup.changed.testrspec
+    - match: F+
+      scope: markup.deleted.testrspec
