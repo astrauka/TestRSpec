@@ -5,10 +5,12 @@ from ..plugin_helpers.utils import memoize
 from ..plugin_helpers.project_files import ProjectFiles
 from .project_root import ProjectRoot
 from .output import Output
+from .rspec_print import rspec_print
 
 
 class TaskContext:
     GEMFILE_NAME = "Gemfile"
+    LOG_LEVELS = [Output.Levels.ERROR, Output.Levels.WARNING, Output.Levels.INFO]
 
     def __init__(self, sublime_command, edit, spec_target_is_file=False):
         self.sublime_command = sublime_command
@@ -73,7 +75,14 @@ class TaskContext:
         return self.output_buffer().panel()
 
     def log(self, message, level=Output.Levels.INFO):
-        self.output_buffer().log("{0}: {1}".format(level, message))
+        if not self._can_log(level):
+            return
+
+        formatted_message = "{0}: {1}".format(level, message)
+        if self.from_settings("log_to_console"):
+            rspec_print(formatted_message)
+        else:
+            self.output_buffer().log(formatted_message)
 
     def display_output_panel(self):
         self.output_buffer().show_panel()
@@ -100,3 +109,13 @@ class TaskContext:
         return ProjectFiles(
             self.project_root(), file_matcher, self.from_settings("ignored_directories")
         ).filter()
+
+    def _get_log_level(self, log_level, default=0):
+        try:
+            return self.LOG_LEVELS.index(str(log_level).upper())
+        except ValueError:
+            rspec_print("Invalid log level: {0}".format(log_level))
+            return default
+
+    def _can_log(self, log_level):
+        return self._get_log_level(log_level, 0) <= self._get_log_level(self.from_settings("log_level", 2))

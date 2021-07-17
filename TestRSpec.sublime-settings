@@ -53,4 +53,8 @@
   "create_spec_class_name_regexp": "(class|module)[ ]+([a-zA-Z0-9:]*)",
   // if there is an exact match then directly jump to that one, show dropdown otherwise
   "switch_code_test_immediately_on_direct_match": true,
+  // can be ERROR, WARNING or INFO
+  "log_level": "INFO",
+  // write logs to the output panel or the console
+  "log_to_console": false,
 }
