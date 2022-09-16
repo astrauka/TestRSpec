@@ -51,6 +51,8 @@
   "spec_file_extension": "_spec.rb",
   // regexp used to determine class name once creating new spec file
   "create_spec_class_name_regexp": "(class|module)[ ]+([a-zA-Z0-9:]*)",
+  // if nested classes should be ignored when creating a new spec file
+  "ignore_nested_classes": true,
   // if there is an exact match then directly jump to that one, show dropdown otherwise
   "switch_code_test_immediately_on_direct_match": true,
   // can be ERROR, WARNING or INFO
