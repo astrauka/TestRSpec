@@ -82,7 +82,11 @@ class CreateSpecFile:
         names = []
         for descriptor, name in matches:
             names.append(name)
-            if descriptor == self.CLASS_DESCRIPTOR:
+            if self._ignore_nested_classes() and descriptor == self.CLASS_DESCRIPTOR:
                 break
 
         return "::".join(names)
+    
+    @memoize
+    def _ignore_nested_classes(self):
+        return self.context.from_settings("ignore_nested_classes")
