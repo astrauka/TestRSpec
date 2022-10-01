@@ -19,7 +19,7 @@ class SpecFile:
 
     def spec_name(self):
         return os.path.join(
-            self.context.project_root(),
+            self.context.package_root(),
             self.context.from_settings("spec_folder"),
             self._name_without_ignored_directory(),
         )

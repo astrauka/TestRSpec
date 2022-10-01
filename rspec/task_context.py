@@ -3,6 +3,7 @@ import sublime
 
 from ..plugin_helpers.utils import memoize
 from ..plugin_helpers.project_files import ProjectFiles
+from .package_root import PackageRoot
 from .project_root import ProjectRoot
 from .output import Output
 from .rspec_print import rspec_print
@@ -34,6 +35,10 @@ class TaskContext:
         return os.path.relpath(self.file_name(), self.project_root())
 
     @memoize
+    def file_package_relative_name(self):
+        return os.path.relpath(self.file_name(), self.package_root())
+
+    @memoize
     def spec_file_extension(self):
         return self.from_settings("spec_file_extension")
 
@@ -60,7 +65,18 @@ class TaskContext:
 
     @memoize
     def project_root(self):
-        return ProjectRoot(self.file_name(), self.from_settings("spec_folder")).result()
+        return ProjectRoot(
+            self.file_name(),
+            self.from_settings("spec_folder"),
+            self.sublime_command,
+        ).result()
+
+    @memoize
+    def package_root(self):
+        return PackageRoot(
+            self.file_name(),
+            self.from_settings("spec_folder"),
+        ).result()
 
     def window(self):
         return self.view().window()

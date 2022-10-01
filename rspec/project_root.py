@@ -1,10 +1,13 @@
 import os
 
+from .package_root import PackageRoot
+
 
 class ProjectRoot:
-    def __init__(self, file_name, spec_folder_name):
+    def __init__(self, file_name, spec_folder_name, sublime_command):
         self.file_name = file_name
         self.spec_folder_name = spec_folder_name
+        self.sublime_command = sublime_command
 
     def result(self):
         if not self.file_name:
@@ -12,21 +15,25 @@ class ProjectRoot:
         if not self.spec_folder_name:
             return
 
-        return self._via_inclusion() or self._via_upwards_search()
+        return self._via_open_folders() or self._package_root()
 
-    def _via_inclusion(self):
-        wrapped_folder_name = "/{0}/".format(self.spec_folder_name)
-        if not wrapped_folder_name in self.file_name:
+    def _via_open_folders(self):
+        view = self.sublime_command.view
+        if not view:
             return
 
-        return self.file_name[: self.file_name.rindex(wrapped_folder_name)]
+        window = view.window()
+        if not window:
+            return
 
-    def _via_upwards_search(self):
-        path = self.file_name
+        for folder in window.folders():
+            if not self.file_name.startswith(folder):
+                continue
 
-        while True:
-            (path, current_dir_name) = os.path.split(path)
-            if not current_dir_name:
-                return
-            if self.spec_folder_name in os.listdir(path):
-                return path
+            spec_folder_path = os.path.join(folder, self.spec_folder_name)
+            if os.path.isdir(spec_folder_path):
+                return folder
+
+    # FIXME: untested
+    def _package_root(self):
+        return PackageRoot(self.file_name, self.spec_folder_name).result()

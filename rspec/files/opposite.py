@@ -8,7 +8,7 @@ class OppositeFile:
         self.context = context
 
     def relative_name(self):
-        return self.opposite(self.context.file_relative_name())
+        return self.opposite(self.context.file_package_relative_name())
 
     def base_name(self):
         return self.opposite(self.context.file_base_name())

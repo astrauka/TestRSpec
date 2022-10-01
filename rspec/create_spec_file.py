@@ -48,7 +48,7 @@ class CreateSpecFile:
                 ignored_directory, relative_name
             )
 
-        return os.path.join(self.context.project_root(), relative_name)
+        return os.path.join(self.context.package_root(), relative_name)
 
     def _spec_name_with_ignore(self, ignored_directory, relative_name):
         ignore = os.path.join(self._spec_folder(), ignored_directory)
