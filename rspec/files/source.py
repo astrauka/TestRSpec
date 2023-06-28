@@ -16,7 +16,7 @@ class SourceFile:
 
     def _source_name(self):
         return os.path.join(
-            self.context.project_root(),
+            self.context.package_root(),
             self.append_directory,
             self._name_without_spec_directory(),
         )
