@@ -34,6 +34,5 @@ class ProjectRoot:
             if os.path.isdir(spec_folder_path):
                 return folder
 
-    # FIXME: untested
     def _package_root(self):
         return PackageRoot(self.file_name, self.spec_folder_name).result()
